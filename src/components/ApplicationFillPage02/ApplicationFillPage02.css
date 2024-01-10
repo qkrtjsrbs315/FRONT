@@ -1,0 +1,459 @@
+.container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+.rectangle {
+  position: relative;
+  left: 50%;
+  top: calc(175px * var(--screen-ratio));
+  transform: translate(-50%);
+
+  width: calc(1000px * var(--screen-ratio));
+  /*크기 자동 조정*/
+  height: calc(725px * var(--screen-ratio));
+  /*크기 자동 조정*/
+
+  background-color: #dadada;
+  text-align: center;
+}
+
+.pageExplanation {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+
+  top: calc(25px * var(--screen-ratio) + (-2px * var(--changeSize) * var(--screen-ratio)));
+  /*위치 자동 조정*/
+
+  font-family: 'Inner', sans-serif;
+  font-size: calc((40px * var(--screen-ratio)) + (4px * var(--changeSize) * var(--screen-ratio)));
+  /*크기 자동 조정*/
+  color: black;
+  font-weight: normal;
+  white-space: nowrap;
+}
+
+.dividingBar {
+  position: absolute;
+
+  left: calc(25px * var(--screen-ratio));
+  /*위치 자동 조정*/
+  top: calc(90px * var(--screen-ratio));
+  /*위치 자동 조정*/
+
+  width: calc(950px * var(--screen-ratio));
+  /*크기 자동 조정*/
+  height: calc(2px * var(--screen-ratio));
+  /*크기 자동 조정*/
+
+  background-color: black;
+}
+
+.announcement {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+
+  top: calc(102px * var(--screen-ratio) + (-2px * var(--changeSize) * var(--screen-ratio)));
+  /*위치 자동 조정*/
+  width: 100vw;
+
+  font-family: 'Inner', sans-serif;
+  font-size: calc((16px * var(--screen-ratio)) + (4px * var(--changeSize) * var(--screen-ratio)));
+  /*크기 자동 조정*/
+  color: black;
+  font-weight: normal;
+  white-space: pre-wrap;
+}
+
+.infoSurveyExplanation {
+  position: absolute;
+
+  left: calc(50px * var(--screen-ratio));
+  /*위치 자동 조정*/
+  top: calc((133px * var(--screen-ratio)) + (-2px * var(--changeSize) * var(--screen-ratio)));
+  /*위치 자동 조정*/
+
+  border: none;
+  font-size: calc((20px * var(--screen-ratio)) + (4px * var(--changeSize) * var(--screen-ratio)));
+  outline: none;
+}
+
+.infoSurvey01 {
+  position: absolute;
+
+  left: calc(50px * var(--screen-ratio));
+  /*위치 자동 조정*/
+  top: calc(165px * var(--screen-ratio));
+  /*위치 자동 조정*/
+
+  width: calc(900px * var(--screen-ratio));
+  /*크기 자동 조정*/
+  height: calc(95px * var(--screen-ratio));
+  /*크기 자동 조정*/
+
+  background-color: white;
+}
+
+.infoSurveyText01 {
+  position: absolute;
+
+  left: calc(5px * var(--screen-ratio));
+  /*위치 자동 조정*/
+  top: calc(3px * var(--screen-ratio));
+  /*위치 자동 조정*/
+  
+  border: none;
+  font-size: calc(16px * var(--screen-ratio));
+  outline: none;
+  text-align: left;
+}
+
+.agreeButtonText01 {
+  position: absolute;
+
+  left: calc(780px * var(--screen-ratio));
+  /*위치 자동 조정*/
+  top: calc((262px * var(--screen-ratio)) + (-2px * var(--changeSize) * var(--screen-ratio)));
+  /*위치 자동 조정*/
+
+  border: none;
+  font-size: calc((18px * var(--screen-ratio)) + (4px * var(--changeSize) * var(--screen-ratio)));
+  outline: none;
+}
+
+.disagreeButtonText01 {
+  position: absolute;
+
+  left: calc(860px * var(--screen-ratio));
+  /*위치 자동 조정*/
+  top: calc((262px * var(--screen-ratio)) + (-2px * var(--changeSize) * var(--screen-ratio)));
+  /*위치 자동 조정*/
+
+  border: none;
+  font-size: calc((18px * var(--screen-ratio)) + (4px * var(--changeSize) * var(--screen-ratio)));
+  outline: none;
+}
+
+.agreeButton01 {
+  position: absolute;
+
+  left: calc(830px * var(--screen-ratio));
+  /*위치 자동 조정*/
+  top: calc(265px * var(--screen-ratio));
+  /*위치 자동 조정*/
+
+  width: calc(20px * var(--screen-ratio));
+  /*크기 자동 조정*/
+  height: calc(20px * var(--screen-ratio));
+  /*크기 자동 조정*/
+
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+  cursor: pointer;
+  background-color: white;
+}
+
+.disagreeButton01 {
+  position: absolute;
+
+  left: calc(930px * var(--screen-ratio));
+  /*위치 자동 조정*/
+  top: calc(265px * var(--screen-ratio));
+  /*위치 자동 조정*/
+
+  width: calc(20px * var(--screen-ratio));
+  /*크기 자동 조정*/
+  height: calc(20px * var(--screen-ratio));
+  /*크기 자동 조정*/
+
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+  cursor: pointer;
+  background-color: white;
+}
+
+.agreeButton01.checked,
+.disagreeButton01.checked {
+  background-color: black;
+}
+
+.infoSurvey02 {
+  position: absolute;
+
+  left: calc(50px * var(--screen-ratio));
+  /*위치 자동 조정*/
+  top: calc(290px * var(--screen-ratio));
+  /*위치 자동 조정*/
+
+  width: calc(900px * var(--screen-ratio));
+  /*크기 자동 조정*/
+  height: calc(165px * var(--screen-ratio));
+  /*크기 자동 조정*/
+
+  background-color: white;
+}
+
+.infoSurveyText02 {
+  position: absolute;
+
+  left: calc(5px * var(--screen-ratio));
+  /*위치 자동 조정*/
+  top: calc(3px * var(--screen-ratio));
+  /*위치 자동 조정*/
+  
+  border: none;
+  font-size: calc(16px * var(--screen-ratio));
+  outline: none;
+  text-align: left;
+}
+
+.agreeButtonText02 {
+  position: absolute;
+
+  left: calc(780px * var(--screen-ratio));
+  /*위치 자동 조정*/
+  top: calc((457px * var(--screen-ratio)) + (-2px * var(--changeSize) * var(--screen-ratio)));
+  /*위치 자동 조정*/
+
+  border: none;
+  font-size: calc((18px * var(--screen-ratio)) + (4px * var(--changeSize) * var(--screen-ratio)));
+  outline: none;
+}
+
+.disagreeButtonText02 {
+  position: absolute;
+
+  left: calc(860px * var(--screen-ratio));
+  /*위치 자동 조정*/
+  top: calc((457px * var(--screen-ratio)) + (-2px * var(--changeSize) * var(--screen-ratio)));
+  /*위치 자동 조정*/
+
+  border: none;
+  font-size: calc((18px * var(--screen-ratio)) + (4px * var(--changeSize) * var(--screen-ratio)));
+  outline: none;
+}
+
+.agreeButton02 {
+  position: absolute;
+
+  left: calc(830px * var(--screen-ratio));
+  /*위치 자동 조정*/
+  top: calc(460px * var(--screen-ratio));
+  /*위치 자동 조정*/
+
+  width: calc(20px * var(--screen-ratio));
+  /*크기 자동 조정*/
+  height: calc(20px * var(--screen-ratio));
+  /*크기 자동 조정*/
+
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+  cursor: pointer;
+  background-color: white;
+}
+
+.disagreeButton02 {
+  position: absolute;
+
+  left: calc(930px * var(--screen-ratio));
+  /*위치 자동 조정*/
+  top: calc(460px * var(--screen-ratio));
+  /*위치 자동 조정*/
+
+  width: calc(20px * var(--screen-ratio));
+  /*크기 자동 조정*/
+  height: calc(20px * var(--screen-ratio));
+  /*크기 자동 조정*/
+
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+  cursor: pointer;
+  background-color: white;
+}
+
+.agreeButton02.checked,
+.disagreeButton02.checked {
+  background-color: black;
+}
+
+.infoSurvey03 {
+  position: absolute;
+
+  left: calc(50px * var(--screen-ratio));
+  /*위치 자동 조정*/
+  top: calc(485px * var(--screen-ratio));
+  /*위치 자동 조정*/
+
+  width: calc(900px * var(--screen-ratio));
+  /*크기 자동 조정*/
+  height: calc(120px * var(--screen-ratio));
+  /*크기 자동 조정*/
+
+  background-color: white;
+}
+
+.infoSurveyText03 {
+  position: absolute;
+
+  left: calc(5px * var(--screen-ratio));
+  /*위치 자동 조정*/
+  top: calc(3px * var(--screen-ratio));
+  /*위치 자동 조정*/
+  
+  border: none;
+  font-size: calc(16px * var(--screen-ratio));
+  outline: none;
+  text-align: left;
+}
+
+.agreeButtonText03 {
+  position: absolute;
+
+  left: calc(780px * var(--screen-ratio));
+  /*위치 자동 조정*/
+  top: calc((607px * var(--screen-ratio)) + (-2px * var(--changeSize) * var(--screen-ratio)));
+  /*위치 자동 조정*/
+
+  border: none;
+  font-size: calc((18px * var(--screen-ratio)) + (4px * var(--changeSize) * var(--screen-ratio)));
+  outline: none;
+}
+
+.disagreeButtonText03 {
+  position: absolute;
+
+  left: calc(860px * var(--screen-ratio));
+  /*위치 자동 조정*/
+  top: calc((607px * var(--screen-ratio)) + (-2px * var(--changeSize) * var(--screen-ratio)));
+  /*위치 자동 조정*/
+
+  border: none;
+  font-size: calc((18px * var(--screen-ratio)) + (4px * var(--changeSize) * var(--screen-ratio)));
+  outline: none;
+}
+
+.agreeButton03 {
+  position: absolute;
+
+  left: calc(830px * var(--screen-ratio));
+  /*위치 자동 조정*/
+  top: calc(610px * var(--screen-ratio));
+  /*위치 자동 조정*/
+
+  width: calc(20px * var(--screen-ratio));
+  /*크기 자동 조정*/
+  height: calc(20px * var(--screen-ratio));
+  /*크기 자동 조정*/
+
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+  cursor: pointer;
+  background-color: white;
+}
+
+.disagreeButton03 {
+  position: absolute;
+
+  left: calc(930px * var(--screen-ratio));
+  /*위치 자동 조정*/
+  top: calc(610px * var(--screen-ratio));
+  /*위치 자동 조정*/
+
+  width: calc(20px * var(--screen-ratio));
+  /*크기 자동 조정*/
+  height: calc(20px * var(--screen-ratio));
+  /*크기 자동 조정*/
+
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+  cursor: pointer;
+  background-color: white;
+}
+
+.agreeButton03.checked,
+.disagreeButton03.checked {
+  background-color: black;
+}
+
+.previousButton {
+  position: absolute;
+
+  top: calc(635px * var(--screen-ratio));
+  /*위치 자동 조정*/
+  left: calc(250px * var(--screen-ratio));
+  /*위치 자동 조정*/
+
+  width: calc(200px * var(--screen-ratio));
+  /*크기 자동 조정*/
+  height: calc(60px * var(--screen-ratio));
+  /*크기 자동 조정*/
+
+  border: 0;
+  background-color: #b5b5b5;
+  cursor: pointer;
+}
+
+.previousButton:hover {
+  /* 호버 효과 */
+  background-color: #878787;
+}
+
+.previousButtonText {
+  position: absolute;
+  left: 50%;
+  top: 45%;
+  transform: translate(-50%, -50%);
+
+  font-family: 'Inner', sans-serif;
+  font-size: calc((40px * var(--screen-ratio)) + (4px * var(--changeSize) * var(--screen-ratio)));
+  /*크기 자동 조정*/
+  color: black;
+  font-weight: normal;
+  white-space: nowrap;
+}
+
+.nextButton {
+  position: absolute;
+
+  top: calc(635px * var(--screen-ratio));
+  /*위치 자동 조정*/
+  left: calc(550px * var(--screen-ratio));
+  /*위치 자동 조정*/
+
+  width: calc(200px * var(--screen-ratio));
+  /*크기 자동 조정*/
+  height: calc(60px * var(--screen-ratio));
+  /*크기 자동 조정*/
+
+  border: 0;
+  background-color: #b5b5b5;
+  cursor: pointer;
+}
+
+.nextButton:hover {
+  /* 호버 효과 */
+  background-color: #878787;
+}
+
+.nextButtonText {
+  position: absolute;
+  left: 50%;
+  top: 45%;
+  transform: translate(-50%, -50%);
+
+  font-family: 'Inner', sans-serif;
+  font-size: calc((40px * var(--screen-ratio)) + (4px * var(--changeSize) * var(--screen-ratio)));
+  /*크기 자동 조정*/
+  color: black;
+  font-weight: normal;
+  white-space: nowrap;
+}
