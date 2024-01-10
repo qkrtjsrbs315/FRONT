@@ -13,10 +13,11 @@ import {
   InputField,
   TextArea,
   SubmitButton,
-  PasswordContainer
-} from "./createpost.style";
+  PasswordContainer,
+  ButtonGroup
+} from "./volunteerhistorypage.style";
 
-function CreatePost() {
+function VolunteerHistoryPage() {
   const [postData, setPostData] = useState({
     title: "",
     content: "",
@@ -25,15 +26,7 @@ function CreatePost() {
   });
 
   const handleCreatePost = async () => {
-    try {
-      const response = await axios.post("/api/posts", postData);
-      console.log("API 응답:", response.data);
 
-      // 성공적인 응답 후의 동작을 추가하세요.
-
-    } catch (error) {
-      console.error("API 요청 중 오류:", error);
-    }
   };
 
   const handleInputChange = (e) => {
@@ -48,12 +41,12 @@ function CreatePost() {
     <>
       <PostContainer>
         <PostHeaderContainer>
-          <StyledP>게시글 작성</StyledP>
+          <StyledP>노인 봉사 신청 이력서 작성 화면입니다.</StyledP>
         </PostHeaderContainer>
         <Form>
           <InputGroup>
             <InputInnerGroup>
-              <InputLabel htmlFor="title">제목</InputLabel>
+              <InputLabel htmlFor="title">성함</InputLabel>
               <InputField
                 type="text"
                 id="title"
@@ -63,7 +56,7 @@ function CreatePost() {
               />
             </InputInnerGroup>
             <InputInnerGroup>
-              <InputLabel htmlFor="name">성함</InputLabel>
+              <InputLabel htmlFor="name">전화번호</InputLabel>
               <InputField
                 type="text"
                 id="name"
@@ -74,13 +67,29 @@ function CreatePost() {
             </InputInnerGroup>
           </InputGroup>
 
-          <InputLabel htmlFor="content">게시물 내용</InputLabel>
+          <InputLabel htmlFor="content">지금까지 하신 봉사 활동</InputLabel>
           <TextArea
             id="content"
             name="content"
             value={postData.content}
             onChange={handleInputChange}
           ></TextArea>
+          <InputLabel htmlFor="content">선호하시는 봉사 활동</InputLabel>
+          <TextArea
+            id="content"
+            name="content"
+            value={postData.content}
+            onChange={handleInputChange}
+          ></TextArea>
+          <InputLabel htmlFor="content">선호하시는 지역</InputLabel>
+          <InputField
+                type="text"
+                id="name"
+                name="name"
+                value={postData.name}
+                onChange={handleInputChange}
+              />
+          
           <PasswordContainer>
               <InputInnerGroup>
                   <InputLabel htmlFor="password">비밀번호</InputLabel>
@@ -94,13 +103,18 @@ function CreatePost() {
                 </InputInnerGroup>
           </PasswordContainer>
 
+        <ButtonGroup>
+        <SubmitButton type="button" onClick={handleCreatePost}>
+            삭제
+          </SubmitButton>
           <SubmitButton type="button" onClick={handleCreatePost}>
             작성
           </SubmitButton>
+        </ButtonGroup>
         </Form>
       </PostContainer>
     </>
   );
 }
 
-export default CreatePost;
+export default VolunteerHistoryPage;

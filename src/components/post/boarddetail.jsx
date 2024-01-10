@@ -16,7 +16,7 @@ import {
   PasswordContainer
 } from "./createpost.style";
 
-function CreatePost() {
+function BoardDetail() {
   const [postData, setPostData] = useState({
     title: "",
     content: "",
@@ -26,7 +26,7 @@ function CreatePost() {
 
   const handleCreatePost = async () => {
     try {
-      const response = await axios.post("/api/posts", postData);
+      const response = await axios.get("/api/posts", postData);
       console.log("API 응답:", response.data);
 
       // 성공적인 응답 후의 동작을 추가하세요.
@@ -103,4 +103,4 @@ function CreatePost() {
   );
 }
 
-export default CreatePost;
+export default BoardDetail;

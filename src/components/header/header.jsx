@@ -26,23 +26,18 @@ function Header() {
                 </StyledLink>
               </Th>
               <Th>
-                <StyledLink to="/board">
+                <StyledLink to="/ApplicationEntryPage">
                   노인돌봄신청서 작성
                 </StyledLink>
               </Th>
               <Th>
-                <StyledLink to="/volunteer">
+                <StyledLink to="/volunteerentrypage">
                   노인 봉사 신청
                 </StyledLink>
               </Th>
               <Th>
-                <StyledLink to="/hobbyboard">
-                  취미 게시판
-                </StyledLink>
-              </Th>
-              <Th>
-                <StyledLink to="/memoryboard">
-                  추억게시판
+                <StyledLink to="/board">
+                  이야기 게시판
                 </StyledLink>
               </Th>
               <Th>
