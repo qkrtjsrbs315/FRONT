@@ -1,0 +1,180 @@
+.container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+.rectangle {
+  position: relative;
+  left: 50%;
+  top: calc(250px * var(--screen-ratio));
+  transform: translate(-50%);
+
+  width: calc(1100px * var(--screen-ratio)); 
+  /*크기 자동 조정*/
+  height: calc(550px * var(--screen-ratio)); 
+  /*크기 자동 조정*/
+
+  background-color: #dadada;
+  text-align: center;
+}
+
+.pageExplanation {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+
+  top: calc(50px * var(--screen-ratio) + (-2px * var(--changeSize) * var(--screen-ratio))); 
+  /*위치 자동 조정*/
+
+  font-family: 'Inner', sans-serif; 
+  font-size: calc((40px * var(--screen-ratio)) + (4px * var(--changeSize) * var(--screen-ratio)));  
+  /*크기 자동 조정*/
+  color: black;
+  font-weight: normal;
+  white-space: nowrap;
+}
+
+.leftRectangle {
+  position: absolute;
+
+  top: calc(225px * var(--screen-ratio));
+  /*위치 자동 조정*/
+  left: calc(33px * var(--screen-ratio));
+  /*위치 자동 조정*/
+
+  width: calc(500px * var(--screen-ratio)); 
+  /*크기 자동 조정*/
+  height: calc(300px * var(--screen-ratio)); 
+  /*크기 자동 조정*/
+
+  background-color: #b5b5b5;
+  text-align: center;
+}
+
+.MakingResumeExplanation {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+
+  top: calc(20px * var(--screen-ratio) + (-2px * var(--changeSize) * var(--screen-ratio))); 
+  /*위치 자동 조정*/
+
+  font-family: 'Inner', sans-serif; 
+  font-size: calc((40px * var(--screen-ratio)) + (4px * var(--changeSize) * var(--screen-ratio)));  
+  /*크기 자동 조정*/
+  color: black;
+  font-weight: normal;
+  white-space: nowrap;
+}
+
+.MakingResumeButton {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+
+  top: calc(200px * var(--screen-ratio));
+  /*위치 자동 조정*/
+
+  width: calc(200px * var(--screen-ratio));
+  /*크기 자동 조정*/
+  height: calc(60px * var(--screen-ratio)); 
+  /*크기 자동 조정*/
+
+  border: 0;
+  background-color: #dadada;
+  cursor: pointer;
+}
+
+.MakingResumeButton:hover {
+  /* 호버 효과 */
+  background-color: #878787;
+}
+
+.MakingResumeButtonText {
+  position: absolute;
+  left: 50%;
+  top: 45%;
+  transform: translate(-50%, -50%);
+
+  font-family: 'Inner', sans-serif;
+  font-size: calc((40px * var(--screen-ratio)) + (4px * var(--changeSize) * var(--screen-ratio)));
+  /*크기 자동 조정*/
+  color: black;
+  font-weight: normal;
+  white-space: nowrap;
+}
+
+.rightRectangle {
+  position: absolute;
+
+  top: calc(225px * var(--screen-ratio));
+  /*위치 자동 조정*/
+  left: calc(573px * var(--screen-ratio));
+  /*위치 자동 조정*/
+
+  width: calc(500px * var(--screen-ratio)); 
+  /*크기 자동 조정*/
+  height: calc(300px * var(--screen-ratio)); 
+  /*크기 자동 조정*/
+
+  background-color: #b5b5b5;
+  text-align: center;
+}
+
+.InquireResumeExplanation {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+
+  top: calc(20px * var(--screen-ratio) + (-2px * var(--changeSize) * var(--screen-ratio))); 
+  /*위치 자동 조정*/
+
+  font-family: 'Inner', sans-serif; 
+  font-size: calc((40px * var(--screen-ratio)) + (4px * var(--changeSize) * var(--screen-ratio)));  
+  /*크기 자동 조정*/
+  color: black;
+  font-weight: normal;
+  white-space: nowrap;
+}
+
+.InquireResumeButton {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+
+  top: calc(200px * var(--screen-ratio));
+  /*위치 자동 조정*/
+
+  width: calc(200px * var(--screen-ratio));
+  /*크기 자동 조정*/
+  height: calc(60px * var(--screen-ratio)); 
+  /*크기 자동 조정*/
+
+  border: 0;
+  background-color: #dadada;
+  cursor: pointer;
+}
+
+.InquireResumeButton:hover {
+  /* 호버 효과 */
+  background-color: #878787;
+}
+
+.InquireResumeButtonText {
+  position: absolute;
+  left: 50%;
+  top: 45%;
+  transform: translate(-50%, -50%);
+
+  font-family: 'Inner', sans-serif;
+  font-size: calc((40px * var(--screen-ratio)) + (4px * var(--changeSize) * var(--screen-ratio)));
+  /*크기 자동 조정*/
+  color: black;
+  font-weight: normal;
+  white-space: nowrap;
+}
+
+
+
+
