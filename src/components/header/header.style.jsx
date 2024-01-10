@@ -1,28 +1,53 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
+import useScreenRatio from './useScreenRatio.js'; //화면 비율 자동 계산기
+import ChangeSize from './changeSize';
+
 export const StyledHeader = styled.div`
-  width: 100%;
-  height: 50px;
+  position: relative;
+
+  width: calc(1440px * var(--screen-ratio)); 
+  /*크기 자동 조정*/
+  height: calc(50px * var(--screen-ratio)); 
+  /*크기 자동 조정*/
+
   display: flex;
   background-color: #668BC4;
   align-items: center;
-  justify-content: space-between;
+
 `;
 
 export const SizeContainer = styled.div`
-  width: 200px;
-  display: flex;
-  justify-content: space-between;
+  position: absolute;
+
+  left: calc(1000px * var(--screen-ratio));
+  /*위치 자동 조정*/
+
+  width: calc(350px * var(--screen-ratio)); 
+  /*크기 자동 조정*/
+  height: calc(50px * var(--screen-ratio)); 
+  /*크기 자동 조정*/
+
   background-color: #335495;
   padding: 7px 12px;
 `;
 
 export const SizeButton = styled.button`
+
+  left: calc(1000px * var(--screen-ratio));
+  /*위치 자동 조정*/
+
+  width: calc(30px * var(--screen-ratio)); 
+  /*크기 자동 조정*/
+  height: calc(30px * var(--screen-ratio)); 
+  /*크기 자동 조정*/
+
+  font-size: calc((20px * var(--screen-ratio)) + (4px * var(--changeSize) * var(--screen-ratio)));
   background-color: #FFF;
   border: none;
-  width: 20px;
-  height: 20px; /* height 값 추가 */
+  padding: 0;
+  cursor: pointer;
 `;
 
 export const TableContainer = styled.div`

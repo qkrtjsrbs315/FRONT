@@ -1,0 +1,318 @@
+.container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+}
+
+.header {
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+
+    width: calc(1440px * var(--screen-ratio));
+    /*크기 자동 조정*/
+    height: calc(50px * var(--screen-ratio));
+    /*크기 자동 조정*/
+
+    background-color: #668BC4;
+}
+
+.wellcome {
+    position: absolute;
+  
+    left: calc(25px * var(--screen-ratio));
+    /*위치 자동 조정*/
+    top: calc(7px * var(--screen-ratio) + (-2px * var(--changeSize) * var(--screen-ratio))); 
+    /*위치 자동 조정*/
+  
+    font-family: 'Inner', sans-serif; 
+    font-size: calc((24px * var(--screen-ratio)) + (4px * var(--changeSize) * var(--screen-ratio)));  
+    /*크기 자동 조정*/
+    color: black;
+    font-weight: normal;
+    white-space: nowrap;
+}
+
+.sizingButton {
+    position: absolute;
+    left: calc(900px * var(--screen-ratio));
+    /*위치 자동 조정*/
+
+    width: calc(400px * var(--screen-ratio));
+    /*크기 자동 조정*/
+    height: calc(50px * var(--screen-ratio));
+    /*크기 자동 조정*/
+
+    background-color: #4370B6;
+}
+
+.sizingButtonExplanation {
+    position: absolute;
+  
+    left: calc(20px * var(--screen-ratio));
+    /*위치 자동 조정*/
+    top: calc(7px * var(--screen-ratio) + (-2px * var(--changeSize) * var(--screen-ratio))); 
+    /*위치 자동 조정*/
+  
+    font-family: 'Inner', sans-serif; 
+    font-size: calc((24px * var(--screen-ratio)) + (4px * var(--changeSize) * var(--screen-ratio)));  
+    /*크기 자동 조정*/
+    color: black;
+    font-weight: normal;
+    white-space: nowrap;
+}
+
+.pButton {
+    position: absolute;
+
+    left: calc(290px * var(--screen-ratio));
+    /*위치 자동 조정*/
+    top: calc(10px * var(--screen-ratio));
+    /*위치 자동 조정*/
+  
+    width: calc(30px * var(--screen-ratio));
+    /*크기 자동 조정*/
+    height: calc(30px * var(--screen-ratio));
+    /*크기 자동 조정*/
+  
+    border: 0;
+    background-color: white;
+    /*크기 자동 조정*/
+    cursor: pointer;
+    padding: 0%;
+}
+
+.pButtonText {
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    transform: translate(-50%, -50%);
+  
+    font-family: 'Inner', sans-serif;
+    font-size: calc((30px * var(--screen-ratio)) + (4px * var(--changeSize) * var(--screen-ratio)));
+    /*크기 자동 조정*/
+    color: black;
+    font-weight: 900;
+  
+    white-space: nowrap;
+}
+
+.mButton {
+    position: absolute;
+
+    left: calc(340px * var(--screen-ratio));
+    /*위치 자동 조정*/
+    top: calc(10px * var(--screen-ratio));
+    /*위치 자동 조정*/
+  
+    width: calc(30px * var(--screen-ratio));
+    /*크기 자동 조정*/
+    height: calc(30px * var(--screen-ratio));
+    /*크기 자동 조정*/
+  
+    border: 0;
+    background-color: white;
+    /*크기 자동 조정*/
+    cursor: pointer;
+    padding: 0%;
+}
+  
+.mButtonText {
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    transform: translate(-50%, -50%);
+  
+    font-family: 'Inner', sans-serif;
+    font-size: calc((30px * var(--screen-ratio)) + (4px * var(--changeSize) * var(--screen-ratio)));
+    /*크기 자동 조정*/
+    color: black;
+    font-weight: 900;
+  
+    white-space: nowrap;
+}
+
+.navbar {
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+
+    width: calc(1440px * var(--screen-ratio));
+    /*크기 자동 조정*/
+    height: calc(100px * var(--screen-ratio));
+    /*크기 자동 조정*/
+}
+
+.logo {
+    position: absolute;
+    left: 0;
+    /*위치 자동 조정*/
+
+    width: calc(300px * var(--screen-ratio));
+    /*크기 자동 조정*/
+    height: calc(100px * var(--screen-ratio));
+    /*크기 자동 조정*/
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 0;
+    background-color: white;   
+}
+
+.Logo-svg {
+    position: absolute;
+
+    width: calc(210px * var(--screen-ratio));
+    /*크기 자동 조정*/
+    height: calc(70px * var(--screen-ratio));
+    /*크기 자동 조정*/
+}
+
+.blueNavbar {
+    position: absolute;
+    left: calc(300px * var(--screen-ratio));
+    /*위치 자동 조정*/
+
+    width: calc(1140px * var(--screen-ratio));
+    /*크기 자동 조정*/
+    height: calc(100px * var(--screen-ratio));
+    /*크기 자동 조정*/
+
+    display: flex;
+    align-items: center;
+
+    background-color: #335495;
+}
+
+.blueNavbarButton01 {
+    position: absolute;
+    left: 0;
+
+    width: calc(350px * var(--screen-ratio));
+    /*크기 자동 조정*/
+    height: calc(100px * var(--screen-ratio));
+    /*크기 자동 조정*/
+
+    cursor: pointer;
+    border: 0;
+    background-color: #1F3662;
+}
+
+.blueNavbarButton01:hover {
+    /* 호버 효과 */
+    background-color: #0C182E;
+}
+
+.blueNavbarButtonText01 {
+    position: absolute;
+    left: 50%;
+    top: 45%;
+    transform: translate(-50%, -50%);
+
+    font-family: 'Inner', sans-serif;
+    font-size: calc((30px * var(--screen-ratio)) + (4px * var(--changeSize) * var(--screen-ratio)));
+    /*크기 자동 조정*/
+    color: white;
+    font-weight: 500;
+
+    white-space: nowrap;
+}
+
+.blueNavbarButton02 {
+    position: absolute;
+
+    left: calc(350px * var(--screen-ratio));
+    /*위치 자동 조정*/
+
+    width: calc(275px * var(--screen-ratio));
+    /*크기 자동 조정*/
+    height: calc(100px * var(--screen-ratio));
+    /*크기 자동 조정*/
+
+    cursor: pointer;
+    border: 0;
+    background-color: #335495;
+}
+
+.blueNavbarButtonText02 {
+    position: absolute;
+    left: 50%;
+    top: 45%;
+    transform: translate(-50%, -50%);
+
+    font-family: 'Inner', sans-serif;
+    font-size: calc((30px * var(--screen-ratio)) + (4px * var(--changeSize) * var(--screen-ratio)));
+    /*크기 자동 조정*/
+    color: white;
+    font-weight: 500;
+
+    white-space: nowrap;
+}
+
+.blueNavbarButton03 {
+    position: absolute;
+
+    left: calc(625px * var(--screen-ratio));
+    /*위치 자동 조정*/
+
+    width: calc(270px * var(--screen-ratio));
+    /*크기 자동 조정*/
+    height: calc(100px * var(--screen-ratio));
+    /*크기 자동 조정*/
+
+    cursor: pointer;
+    border: 0;
+    background-color: #335495;
+}
+
+.blueNavbarButtonText03 {
+    position: absolute;
+    left: 50%;
+    top: 45%;
+    transform: translate(-50%, -50%);
+
+    font-family: 'Inner', sans-serif;
+    font-size: calc((30px * var(--screen-ratio)) + (4px * var(--changeSize) * var(--screen-ratio)));
+    /*크기 자동 조정*/
+    color: white;
+    font-weight: 500;
+    
+    white-space: nowrap;
+}
+
+.blueNavbarButton04 {
+    position: absolute;
+
+    left: calc(900px * var(--screen-ratio));
+    /*위치 자동 조정*/
+
+    width: calc(240px * var(--screen-ratio));
+    /*크기 자동 조정*/
+    height: calc(100px * var(--screen-ratio));
+    /*크기 자동 조정*/
+
+    cursor: pointer;
+    border: 0;
+    background-color: #335495;
+}
+
+.blueNavbarButtonText04 {
+    position: absolute;
+    left: 45%;
+    top: 45%;
+    transform: translate(-50%, -50%);
+
+    font-family: 'Inner', sans-serif;
+    font-size: calc((30px * var(--screen-ratio)) + (4px * var(--changeSize) * var(--screen-ratio)));
+    /*크기 자동 조정*/
+    color: white;
+    font-weight: 500;
+
+    white-space: nowrap;
+}
+
+.blueNavbarButton02:hover, .blueNavbarButton03:hover, .blueNavbarButton04:hover {
+    /* 호버 효과 */
+    background-color: #28457C;
+}
