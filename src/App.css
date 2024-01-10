@@ -1,0 +1,20 @@
+/* App.css */
+
+* {
+  margin: 0;
+}
+
+.app-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 85vh;
+}
+
+.app-content {
+  flex: 1;
+}
+
+.Footer {
+  margin-top: auto; /* This will push the footer to the bottom */
+}
