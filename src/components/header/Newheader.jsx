@@ -47,7 +47,7 @@ const Newheader = () => {
                         <div className="blueNavbarButtonText01">노인돌봄신청서 작성</div>
                     </Link>
 
-                    <Link to="/volunteerentrypage" className="blueNavbarButton02">
+                    <Link to="/volunteer" className="blueNavbarButton02">
                         <div className="blueNavbarButtonText02">노인 봉사 신청</div>
                     </Link>
 

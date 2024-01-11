@@ -2,9 +2,15 @@ import React, { useEffect, useState } from 'react';
 import useScreenRatio from './useScreenRatio'; //화면 비율 자동 계산기
 import ChangeSize from './changeSize';
 import './ApplicationFillPage03.css';
+import { agree2 } from '../../redux/careslice';
+import { useDispatch, useSelector } from "react-redux";
+
 
 const ApplicationFillPage03 = () => {
   const { viewportWidth, viewportHeight } = useScreenRatio();
+  const dispatch = useDispatch();
+  const careInfo = useSelector((state) => state.care.careInfo);
+  const [localInfo, setLocalInfo] = useState(careInfo);
 
   useEffect(() => {
     // 화면 비율이 변경될 때마다 처리해야 하는데
@@ -14,42 +20,43 @@ const ApplicationFillPage03 = () => {
   const { handleClick } = ChangeSize();
   // 글자 크기 조정용
   // changeSize.js 파일 안으로 이동시킴
+  useEffect(() => {
+    dispatch(agree2(localInfo))
 
-  const [selectedOption04, setSelectedOption04] = useState(null);
-  const [selectedOption05, setSelectedOption05] = useState(null);
+  }, [localInfo])
 
-  const handleRadioChange04 = (value) => {
-    setSelectedOption04(value === selectedOption04 ? null : value);
+
+  const handleRadioChange04 = (senseInfo) => {
+    let radiobool1 = (senseInfo === null || senseInfo === "disagree") ? false : true
+    console.log(radiobool1)
+    setLocalInfo((prevState) => ({ ...prevState, senseInfo: radiobool1 }));
   };
 
-  const handleRadioChange05 = (value) => {
-    setSelectedOption05(value === selectedOption05 ? null : value);
+  const handleRadioChange05 = (service) => {
+    let radiobool2 = (service === null || service === "disagree") ? false : true;
+    setLocalInfo((prevState) => ({ ...prevState, service: radiobool2 }));
   };
 
-  const [name, setName] = useState('');
-  const [relationship, setRelationship] = useState('');
-  const [year, setYear] = useState('');
-  const [month, setMonth] = useState('');
-  const [day, setDay] = useState('');
-
-  const handleNameChange = (event) => {
-    setName(event.target.value);
+  const handleNameChange = (name) => {
+    setLocalInfo((prevState) => ({ ...prevState, requestName: name }));
   };
 
-  const handleRelationshipChange = (event) => {
-    setRelationship(event.target.value);
+  const handleRelationshipChange = (relative) => {
+    setLocalInfo((prevState) => ({ ...prevState, relative: relative }));
   };
 
-  const handleYearChange = (event) => {
-    setYear(event.target.value);
+  const handleYearChange = (year) => {
+    setLocalInfo((prevState) => ({ ...prevState, year: year }));
   };
 
-  const handleMonthChange = (event) => {
-    setMonth(event.target.value);
+  const handleMonthChange = (month) => {
+    setLocalInfo((prevState) => ({ ...prevState, month: month }));
+
   };
 
-  const handleDayChange = (event) => {
-    setDay(event.target.value);
+  const handleDayChange = (day) => {
+    setLocalInfo((prevState) => ({ ...prevState, day: day }));
+
   };
 
   const handleFileUpload = (e) => {
@@ -80,14 +87,14 @@ const ApplicationFillPage03 = () => {
 
         <div className="agreeButtonText04">동의</div>
         <button
-          className={`agreeButton04 ${selectedOption04 === 'agree' ? 'checked' : ''}`}
+          className={`agreeButton04 ${localInfo.selectedOption04 === 'agree' ? 'checked' : ''}`}
           onClick={() => handleRadioChange04('agree')}
         >
         </button>
 
         <div className="disagreeButtonText04">비동의</div>
         <button
-          className={`disagreeButton04 ${selectedOption04 === 'disagree' ? 'checked' : ''}`}
+          className={`disagreeButton04 ${localInfo.selectedOption04 === 'disagree' ? 'checked' : ''}`}
           onClick={() => handleRadioChange04('disagree')}
         >
         </button>
@@ -101,14 +108,14 @@ const ApplicationFillPage03 = () => {
 
         <div className="agreeButtonText05">동의</div>
         <button
-          className={`agreeButton05 ${selectedOption05 === 'agree' ? 'checked' : ''}`}
+          className={`agreeButton05 ${localInfo.selectedOption05 === 'agree' ? 'checked' : ''}`}
           onClick={() => handleRadioChange05('agree')}
         >
         </button>
 
         <div className="disagreeButtonText05">비동의</div>
         <button
-          className={`disagreeButton05 ${selectedOption05 === 'disagree' ? 'checked' : ''}`}
+          className={`disagreeButton05 ${localInfo.selectedOption05 === 'disagree' ? 'checked' : ''}`}
           onClick={() => handleRadioChange05('disagree')}
         >
         </button>
@@ -123,8 +130,7 @@ const ApplicationFillPage03 = () => {
         <div className="nameExplanation">신청인(대리 신청인*) 성명</div>
         <input
           type="text"
-          value={name}
-          onChange={handleNameChange}
+          onChange={(event) =>handleNameChange(event.target.value)}
           placeholder="성명을 입력해주세요."
           className="nameInput"
         />
@@ -132,8 +138,7 @@ const ApplicationFillPage03 = () => {
         <div className="relationshipExplanation">신청인과의 관계 (대리 신청의 경우)</div>
         <input
           type="text"
-          value={relationship}
-          onChange={handleRelationshipChange}
+          onChange={(event) => handleRelationshipChange(event.target.value)}
           placeholder="신청인과의 관계를 입력해주세요."
           className="relationshipInput"
         />
@@ -157,24 +162,21 @@ const ApplicationFillPage03 = () => {
         <div className="dateExplanation">날짜</div>
         <input
           type="text"
-          value={year}
-          onChange={handleYearChange}
+          onChange={(event) => handleYearChange(event.target.value)}
           placeholder="년"
           className="yearInput"
         />
         <div className="yearExplanation">년</div>
         <input
           type="text"
-          value={month}
-          onChange={handleMonthChange}
+          onChange={(event) => handleMonthChange(event.target.value)}
           placeholder="월"
           className="monthInput"
         />
         <div className="monthExplanation">월</div>
         <input
           type="text"
-          value={day}
-          onChange={handleDayChange}
+          onChange={(event) => handleDayChange(event.target.value)}
           placeholder="일"
           className="dayInput"
         />

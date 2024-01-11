@@ -10,6 +10,9 @@ import BoardDetail from './components/post/boarddetail';
 
 import HealthBoard from './components/post/healthboard';
 import CarePage from './components/care/care';
+import VolunteerHistoryWritePage from './components/volunteer/volunteerhistorywrite';
+import VolunteerEntry from './components/volunteer/volunteerentry';
+import VolunteerHistoryBoard from './components/volunteer/volunteerhistoryboard';
 
 function App() {
   return (
@@ -29,12 +32,11 @@ const AppRoutes = () =>(
       <Route path='/board/:id' element={<BoardDetail/>} />
       <Route path='/post' element={<CreatePost/>} />
       <Route path='/healthboard' element={<HealthBoard/>} />
-      {/* <Route path='/ApplicationEntryPage' element={<ApplicationEntryPage/>} />
-      <Route path='/ApplicationFillPage01' element={<ApplicationFillPage01/>} />
-      <Route path='/ApplicationFillPage02' element={<ApplicationFillPage02/>} />
-      <Route path='/ApplicationFillPage03' element={<ApplicationFillPage03/>} />
-      <Route path='/ApplicationFillPage04' element={<ApplicationFillPage04/>} /> */}
       <Route path='/care' element={<CarePage />} />
+        <Route path='/volunteer' element={<  VolunteerEntry />} />
+      <Route path='/volunteerwrite' element={<VolunteerHistoryWritePage />} />
+        <Route path='/volunteerboard' element={<VolunteerHistoryBoard />} />
+
     </Routes>
   </div>
   </div>

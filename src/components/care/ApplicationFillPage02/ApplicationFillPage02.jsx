@@ -2,10 +2,17 @@ import React, { useEffect, useState } from 'react';
 import useScreenRatio from './useScreenRatio'; //화면 비율 자동 계산기
 import ChangeSize from './changeSize';
 import './ApplicationFillPage02.css';
-
+import { agree1 } from '../../redux/careslice';
+import { useDispatch,useSelector } from "react-redux";
 
 const ApplicationFillPage02 = () => {
   const { viewportWidth, viewportHeight } = useScreenRatio();
+  const dispatch = useDispatch();
+  const careInfo = useSelector((state) => state.care.careInfo);
+  const [localInfo,setLocalInfo] = useState(careInfo);
+  //  const token = useSelector((state) => state.user.userInfo.token);
+  console.log(careInfo);
+
 
   useEffect(() => {
     // 화면 비율이 변경될 때마다 처리해야 하는데
@@ -16,21 +23,30 @@ const ApplicationFillPage02 = () => {
   // 글자 크기 조정용
   // changeSize.js 파일 안으로 이동시킴
 
-  const [selectedOption01, setSelectedOption01] = useState(null);
-  const [selectedOption02, setSelectedOption02] = useState(null);
-  const [selectedOption03, setSelectedOption03] = useState(null);
+  useEffect(()=>{
+    dispatch(agree1(localInfo))
 
-  const handleRadioChange01 = (value) => {
-    setSelectedOption01(value === selectedOption01 ? null : value);
+  },[localInfo])
+
+  const handleRadioChange01 = (collectPersonalInfo) => {
+    let radiobool1 = (collectPersonalInfo === null || collectPersonalInfo === "disagree") ? false : true
+    console.log(radiobool1)
+    setLocalInfo((prevState) => ({ ...prevState, collectPersonalInfo: radiobool1 }));
+    };
+
+  const handleRadioChange02 = (offerPersonalInfo) => {
+    let radiobool2 = (offerPersonalInfo === null || offerPersonalInfo === "disagree") ?false : true;
+    setLocalInfo((prevState) => ({ ...prevState, offerPersonalInfo: radiobool2 }));
+  };
+  const handleRadioChange03 = (identificationInfo) => {
+    let radiobool3 = ((identificationInfo === null || identificationInfo === "disagree") ? false : true)
+    setLocalInfo((prevState) => ({ ...prevState, identificationInfo: radiobool3}));
   };
 
-  const handleRadioChange02 = (value) => {
-    setSelectedOption02(value === selectedOption02 ? null : value);
-  };
-
-  const handleRadioChange03 = (value) => {
-    setSelectedOption03(value === selectedOption03 ? null : value);
-  };
+  // const handleRadioChange03 = (value) => {
+  //   setSelectedOption03(value === selectedOption03 ? null : value);
+  //   dispatch(agree1({ identificationInfo: selectedOption03 }));
+  //  };
   
   return (
     <div className="container">
@@ -54,14 +70,14 @@ const ApplicationFillPage02 = () => {
 
         <div className="agreeButtonText01">동의</div>
         <button
-          className={`agreeButton01 ${selectedOption01 === 'agree' ? 'checked' : ''}`}
+          className={`agreeButton01 ${localInfo.collectPersonalInfo === 'agree' ? 'checked' : ''}`}
           onClick={() => handleRadioChange01('agree')}
         >
         </button>
 
         <div className="disagreeButtonText01">비동의</div>
         <button
-          className={`disagreeButton01 ${selectedOption01 === 'disagree' ? 'checked' : ''}`}
+          className={`disagreeButton01 ${localInfo.collectPersonalInfo === 'disagree' ? 'checked' : ''}`}
           onClick={() => handleRadioChange01('disagree')}
         >
         </button>
@@ -80,14 +96,14 @@ const ApplicationFillPage02 = () => {
 
         <div className="agreeButtonText02">동의</div>
         <button
-          className={`agreeButton02 ${selectedOption02 === 'agree' ? 'checked' : ''}`}
+          className={`agreeButton02 ${localInfo.offerPersonalInfo === 'agree' ? 'checked' : ''}`}
           onClick={() => handleRadioChange02('agree')}
         >
         </button>
 
         <div className="disagreeButtonText02">비동의</div>
         <button
-          className={`disagreeButton02 ${selectedOption02 === 'disagree' ? 'checked' : ''}`}
+          className={`disagreeButton02 ${localInfo.offerPersonalInfo === 'disagree' ? 'checked' : ''}`}
           onClick={() => handleRadioChange02('disagree')}
         >
         </button>
@@ -104,14 +120,14 @@ const ApplicationFillPage02 = () => {
 
         <div className="agreeButtonText03">동의</div>
         <button
-          className={`agreeButton03 ${selectedOption03 === 'agree' ? 'checked' : ''}`}
+          className={`agreeButton03 ${localInfo.identificationInfo === 'agree' ? 'checked' : ''}`}
           onClick={() => handleRadioChange03('agree')}
         >
         </button>
 
         <div className="disagreeButtonText03">비동의</div>
         <button
-          className={`disagreeButton03 ${selectedOption03 === 'disagree' ? 'checked' : ''}`}
+          className={`disagreeButton03 ${localInfo.identificationInfo === 'disagree' ? 'checked' : ''}`}
           onClick={() => handleRadioChange03('disagree')}
         >
         </button>

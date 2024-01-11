@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
+import { useDispatch } from "react-redux";
 import useScreenRatio from './useScreenRatio';
 import ChangeSize from './changeSize';
+import { setUserInfo } from '../../redux/careslice';
 import {
   ApplicationContainer,
   StyledP,
@@ -9,7 +11,8 @@ import {
 } from '../application.style';
 import { InputForm, InputGroup, InputInnerGroup, InputLabel } from '../application.style';
 
-const ApplicationFillPage01 = () => {
+
+const ApplicationFillPage01 = ({getInfo}) => {
   const { viewportWidth, viewportHeight } = useScreenRatio();
 
   useEffect(() => {
@@ -19,60 +22,56 @@ const ApplicationFillPage01 = () => {
 
   const { handleClick } = ChangeSize();
 
-  const [name, setName] = useState('');
-  const [title, setTitle] = useState('');
-  const [residentNum, setResidentNum] = useState('');
-  const [homeTelNum, setHomeTelNum] = useState('');
-  const [mobileNum, setMobileNum] = useState('');
-  const [registrationAddress, setRegistrationAddress] = useState('');
-  const [residenceAddress, setResidenceAddress] = useState('');
+  const [info, setInfo] = useState({
+    name: "",
+    licenseId: "",
+    homeNumber: "",
+    phoneNumber: "",
+    registeredAddress: "",
+    specAddress: "",
+  })
+  const dispatch = useDispatch();
 
-  const handleNameChange = (event) => {
-    setName(event.target.value);
-  };
-  
-  const handleResidentNumChange = (event) => {
-    setResidentNum(event.target.value);
-  };
+  useEffect(() => {
+    dispatch(setUserInfo(info));
 
-  const handleHomeTelNumChange = (event) => {
-    setHomeTelNum(event.target.value);
-  };
 
-  const handleMobileNumChange = (event) => {
-    setMobileNum(event.target.value);
+  }, [info]);
+
+  const handleNameChange = (name) => {
+    setInfo((prevState) => ({...prevState, name : name}));
   };
 
-  const handleRegistrationAddressChange = (event) => {
-    setRegistrationAddress(event.target.value);
+  const handleResidentNumChange = (residentNum) => {
+    setInfo((prevState) => ({ ...prevState, licenseId: residentNum }));
   };
 
-  const handleResidenceAddressChange = (event) => {
-    setResidenceAddress(event.target.value);
+  const handleHomeTelNumChange = (homeTelNum) => {
+    setInfo((prevState) => ({ ...prevState, homeNumber: homeTelNum }));
+  };
+
+
+  const handleMobileNumChange = (mobileNum) => {
+    setInfo((prevState) => ({ ...prevState, phoneNumber: mobileNum }));
+  };
+
+  const handleRegistrationAddressChange = (registrationAddress) => {
+    setInfo((prevState) => ({ ...prevState, registeredAddress: registrationAddress }));
+
+  };
+
+  const handleResidenceAddressChange = (residenceAddress) => {
+    setInfo((prevState) => ({ ...prevState, specAddress: residenceAddress }));
   };
 
   // Assuming you have state and handlers for the form data
-  const [postData, setPostData] = useState({
-    title: '',
-    name: '',
-    content: '',
-    password: '',
-  });
-
-  const handleInputChange = (name, value) => {
-    setPostData((prevData) => ({
-      ...prevData,
-      [name]: value,
-    }));
-  };
-
   const inputFields = [
-    { label: '성함', id: 'name', name: 'name', value: postData.name, onChange: (event) => handleNameChange(event.target.value) },
-    { label: '주민등록번호', value: residentNum, onChange: (event) => handleResidentNumChange(event.target.value), placeholder: '주민등록번호를 입력해주세요.', className: 'ResidentNumInput' },
-    { label: '자택 연락처', value: homeTelNum, onChange: (event) => handleHomeTelNumChange(event.target.value), placeholder: '자택 연락처를 입력해주세요.', className: 'homeNumInput' },
-    { label: '휴대폰 연락처', value: mobileNum, onChange: (event) => handleMobileNumChange(event.target.value), placeholder: '휴대폰 연락처를 입력해주세요.', className: 'PhoneNumInput' },
-    { label: '등록지 주소', value: registrationAddress, onChange: (event) => handleRegistrationAddressChange(event.target.value), placeholder: '등록지 주소를 입력해주세요.', className: 'registrationAddressInput' },
-    { label: '거주지 주소', value: residenceAddress, onChange: (event) => handleResidenceAddressChange(event.target.value), placeholder: '거주지 주소를 입력해주세요.', className: 'residenceAddressInput' },
+    { label: '성함', id: 'name', name: 'name' },
+    { label: '주민등록번호',  placeholder: '주민등록번호를 입력해주세요.', className: 'ResidentNumInput' },
+    { label: '자택 연락처',  placeholder: '자택 연락처를 입력해주세요.', className: 'homeNumInput' },
+    { label: '휴대폰 연락처',  placeholder: '휴대폰 연락처를 입력해주세요.', className: 'PhoneNumInput' },
+    { label: '등록지 주소',  placeholder: '등록지 주소를 입력해주세요.', className: 'registrationAddressInput' },
+    { label: '거주지 주소', placeholder: '거주지 주소를 입력해주세요.', className: 'residenceAddressInput' },
 
     // Add more input fields as needed
   ];
@@ -89,8 +88,7 @@ const ApplicationFillPage01 = () => {
               type="text"
               id={inputFields[0]['id']}
               name={inputFields[0]['name']}
-              value={inputFields[0]['value']}
-              onChange={inputFields[0]['onChange']}
+              onChange={(event) => handleNameChange(event.target.value)}
             />
           </InputInnerGroup>
         </InputGroup>
@@ -101,8 +99,7 @@ const ApplicationFillPage01 = () => {
               type="text"
               id={inputFields[1]['id']}
               name={inputFields[1]['name']}
-              value={inputFields[1]['value']}
-              onChange={inputFields[1]['onChange']}
+              onChange={(event) => handleResidentNumChange(event.target.value)}
             />
           </InputInnerGroup>
         </InputGroup>
@@ -113,8 +110,7 @@ const ApplicationFillPage01 = () => {
               type="text"
               id={inputFields[2]['id']}
               name={inputFields[2]['name']}
-              value={inputFields[2]['value']}
-              onChange={inputFields[2]['onChange']}
+              onChange={(event) => handleHomeTelNumChange(event.target.value)}
             />
           </InputInnerGroup>
           <InputInnerGroup key={inputFields[3]['id']}>
@@ -123,8 +119,7 @@ const ApplicationFillPage01 = () => {
               type="text"
               id={inputFields[3]['id']}
               name={inputFields[3]['name']}
-              value={inputFields[3]['value']}
-              onChange={inputFields[3]['onChange']}
+              onChange={(event) => handleMobileNumChange(event.target.value)}
             />
           </InputInnerGroup>
         </InputGroup>
@@ -135,8 +130,7 @@ const ApplicationFillPage01 = () => {
               type="text"
               id={inputFields[4]['id']}
               name={inputFields[4]['name']}
-              value={inputFields[4]['value']}
-              onChange={inputFields[4]['onChange']}
+              onChange={(event) => handleRegistrationAddressChange(event.target.value)}
             />
           </InputInnerGroup>
           <InputInnerGroup key={inputFields[5]['id']}>
@@ -145,8 +139,7 @@ const ApplicationFillPage01 = () => {
               type="text"
               id={inputFields[5]['id']}
               name={inputFields[5]['name']}
-              value={inputFields[5]['value']}
-              onChange={inputFields[5]['onChange']}
+              onChange={(event) => handleResidenceAddressChange(event.target.value)}
             />
           </InputInnerGroup>
         </InputGroup>
