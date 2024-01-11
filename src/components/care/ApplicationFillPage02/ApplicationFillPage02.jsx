@@ -3,6 +3,7 @@ import useScreenRatio from './useScreenRatio'; //화면 비율 자동 계산기
 import ChangeSize from './changeSize';
 import './ApplicationFillPage02.css';
 
+
 const ApplicationFillPage02 = () => {
   const { viewportWidth, viewportHeight } = useScreenRatio();
 

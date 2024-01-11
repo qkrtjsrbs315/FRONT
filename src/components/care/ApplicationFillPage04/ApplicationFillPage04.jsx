@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react';
 import useScreenRatio from './useScreenRatio'; //화면 비율 자동 계산기
 import ChangeSize from './changeSize';
-import './ApplicationFillPage04.css';
+// import './ApplicationFillPage04.css';
+import { ApplicationContainer, StyledP, LongLine } from '../application.style.jsx';
 
 const ApplicationFillPage04 = () => {
   const { viewportWidth, viewportHeight } = useScreenRatio();
@@ -16,14 +17,12 @@ const ApplicationFillPage04 = () => {
   // changeSize.js 파일 안으로 이동시킴
 
   return (
-    <div className="container">
-      <div className="rectangle">
-        <div className="pageExplanation">
-        노인맞춤돌봄서비스 신청서 작성이 <br/>
-        완료되었습니다.
-        </div>
-      </div>
-    </div>
+
+    <ApplicationContainer>
+      <StyledP>안녕하세요.</StyledP> <br />
+      <StyledP> 노인 돌봄 신청서를 작성하실 수 있는 화면입니다.</StyledP> <br />
+      <StyledP> 계속하시려면 작성 버튼을 눌러주세요.</StyledP>
+    </ApplicationContainer>
   );
 };
 

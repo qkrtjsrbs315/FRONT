@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import ApplicationEntryPage from './ApplicationEntryPage/ApplicationEntryPage';
 import ApplicationFillPage01 from './ApplicationFillPage01/ApplicationFillPage01';
 import ApplicationFillPage02 from './ApplicationFillPage02/ApplicationFillPage02';
@@ -8,7 +9,7 @@ import { PageButton, ButtonContainer, CareContainer, HomeButton } from './care.s
 
 function CarePage() {
     const [currentPage, setCurrentPage] = useState(0);
-
+    const navigate = useNavigate();
     const pages = [
         <ApplicationEntryPage />,
         <ApplicationFillPage01 />,
@@ -27,6 +28,8 @@ function CarePage() {
 
     const handleGoHome = () => {
         setCurrentPage(0);
+        alert("신청이 완료되었습니다.")
+        navigate("/");
     };
 
     return (

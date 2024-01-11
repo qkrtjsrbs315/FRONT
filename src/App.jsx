@@ -3,8 +3,6 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Footer from './components/footer/Newfooter';
 import Header from './components/header/Newheader';
-import VolunteerEntryPage from './components/VolunteerEntryPage/VolunteerEntryPage';
-import VolunteerHistoryPage from './components/volunteerhistorypage/volunteerhistorypage';
 import './App.css';
 import CreatePost from './components/post/createpost';
 import Board from './components/post/board';
@@ -17,7 +15,6 @@ function App() {
   return (
     <>
     <h1>this is home main page</h1>
-
     </>
 
   );
@@ -38,9 +35,6 @@ const AppRoutes = () =>(
       <Route path='/ApplicationFillPage03' element={<ApplicationFillPage03/>} />
       <Route path='/ApplicationFillPage04' element={<ApplicationFillPage04/>} /> */}
       <Route path='/care' element={<CarePage />} />
-
-      <Route path='/volunteerentrypage' element={<VolunteerEntryPage/>} />
-      <Route path='/volunteerhistorypage' element={<VolunteerHistoryPage/>} />
     </Routes>
   </div>
   </div>
