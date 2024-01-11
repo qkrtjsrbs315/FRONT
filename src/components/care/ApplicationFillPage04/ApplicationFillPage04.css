@@ -1,9 +1,3 @@
-.container {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-}
-
 .rectangle {
   position: relative;
   left: 50%;
@@ -12,7 +6,7 @@
 
   width: calc(1000px * var(--screen-ratio)); 
   /*크기 자동 조정*/
-  height: calc(400px * var(--screen-ratio)); 
+  height: calc(700px * var(--screen-ratio)); 
   /*크기 자동 조정*/
 
   background-color: #dadada;

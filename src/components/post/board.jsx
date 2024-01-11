@@ -2,47 +2,30 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { BoardContainer, StyledP, BoardList, BoardItem, BoardTitle, BoardDescription, BoardFooter, BoardAuthor, BoardDate, StyledLink, PaginationContainer, PaginationButton, CurrentPage } from "./board.style";
+import axios from "axios";
 
 function Board() {
   const navigate = useNavigate();
-  const [boardData, setBoardData] = useState([
-    {
-      "id": 4,
-      "title": "string",
-      "content": "string",
-      "name": "string"
-    },
-    {
-      "id": 5,
-      "title": "string",
-      "content": "string",
-      "name": "string"
-    },
-    {
-      "id": 7,
-      "title": "string",
-      "content": "string",
-      "name": "string"
-    },
-    {
-      "id": 9,
-      "title": "string",
-      "content": "string",
-      "name": "string"
-    },
-    {
-      "id": 13,
-      "title": "배드민턴 모임 입니다!",
-      "content": "서울 특별시 은평구에서 10시에 같이 배드민턴할사람",
-      "name": "훈이"
-    },
-    {
-      "id": 14,
-      "title": "배드민턴 모임 입니다!",
-      "content": "서울 특별시 은평구에서 10시에 같이 배드민턴할사람",
-      "name": "훈이"
+  const [boardData, setBoardData] = useState([ ]);
+  useEffect(()=>{
+    handleGetPost()
+  },[]);
+  const handleGetPost = async () => {
+    try {
+      const response = await axios.get("/api/posts", boardData);
+      console.log("API 응답:", response.data);
+
+      // 성공적인 응답 후의 동작을 추가하세요.
+      if(response.data){
+        setBoardData(response.data.posts);
+        console.log(response.data["posts"])
+        console.log("BoardData : ", boardData);
+      }
+
+    } catch (error) {
+      console.error("API 요청 중 오류:", error);
     }
-  ]);
+  };
 
   const handleBoardItemClick = (boardId) => {
     // 클릭한 boardItem의 id를 사용하여 해당 게시물의 세부 페이지로 이동

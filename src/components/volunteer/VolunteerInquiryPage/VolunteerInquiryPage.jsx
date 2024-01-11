@@ -22,8 +22,6 @@ const ApplicationInquiryPage = () => {
           이력서 조회 화면입니다.
         </div>
         <div className="dividingBar"></div>
-
-        <button style={{ padding: '8px 16px' }} onClick={handleClick}></button>
       </div>
     </div>
   );

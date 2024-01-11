@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
-import useScreenRatio from './useScreenRatio'; //화면 비율 자동 계산기
+import useScreenRatio from './useScreenRatio.js'; //화면 비율 자동 계산기
 import ChangeSize from './changeSize';
-import './ApplicationFillPage04.css';
+import './ApplicationEntryPage.css';
 
 const ApplicationEntryPage = () => {
   const { viewportWidth, viewportHeight } = useScreenRatio();
@@ -19,15 +19,10 @@ const ApplicationEntryPage = () => {
     <div className="container">
       <div className="rectangle">
         <div className="pageExplanation">
-        노인맞춤돌봄서비스 신청서 작성이 <br/>
-        완료되었습니다.
+          안녕하세요.<br />
+          노인 돌봄 신청서를 작성하실 수 있는 화면입니다.<br />
+          계속하시려면 작성 버튼을 눌러주세요.
         </div>
-        
-        <button className="goBackButton">
-          <div className="goBackButtonText">첫 화면으로 돌아가기</div>
-        </button>
-
-        <button style={{ padding: '8px 16px' }} onClick={handleClick}></button>
       </div>
     </div>
   );

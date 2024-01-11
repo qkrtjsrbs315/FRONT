@@ -15,6 +15,7 @@ import {
   SubmitButton,
   PasswordContainer
 } from "./createpost.style";
+import { useNavigate } from "react-router-dom";
 
 function CreatePost() {
   const [postData, setPostData] = useState({
@@ -23,13 +24,15 @@ function CreatePost() {
     password: "",
     name: ""
   });
+  const navigate = useNavigate();
 
   const handleCreatePost = async () => {
     try {
-      const response = await axios.post("/api/posts", postData);
-      console.log("API 응답:", response.data);
-
-      // 성공적인 응답 후의 동작을 추가하세요.
+      const response = await axios.post("/api/posts", postData).then((response) =>{
+        console.log("API 응답:", response.data);
+        alert("게시글 작성이 완료되었습니다!");
+        navigate("/board");
+      });
 
     } catch (error) {
       console.error("API 요청 중 오류:", error);

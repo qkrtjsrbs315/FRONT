@@ -47,7 +47,6 @@ const ApplicationFillPage01 = () => {
   return (
     <div className="container">
       <div className="rectangle">
-        <div className="pageExplanation">노인맞춤돌봄서비스 신청서 작성 화면입니다.</div>
 
         <div className="dividingBar"></div>
 
@@ -100,12 +99,6 @@ const ApplicationFillPage01 = () => {
           placeholder="거주지 주소를 입력해주세요."
           className="residenceAddressInput"
         />
-
-        <button className="nextButton">
-          <div className="nextButtonText">다음화면</div>
-        </button>
-
-        <button style={{ padding: '8px 16px' }} onClick={handleClick}></button>
       </div>
     </div>
   );

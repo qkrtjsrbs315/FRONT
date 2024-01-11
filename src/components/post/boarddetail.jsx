@@ -1,6 +1,9 @@
 // CreatePost.js
 //cors뜸 일단 보류
-import React, { useState } from "react";
+//update는 보류
+
+
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import {
   PostContainer,
@@ -13,28 +16,76 @@ import {
   InputField,
   TextArea,
   SubmitButton,
-  PasswordContainer
-} from "./createpost.style";
+  PasswordContainer,
+  ButtonContainer
+} from "./boarddetail.style";
+import { Navigate, useNavigate, useParams } from "react-router-dom";
 
 function BoardDetail() {
+  const navigate = useNavigate();
+  const [password,setPassword] = useState({
+    password : "1234"
+  })
   const [postData, setPostData] = useState({
     title: "",
     content: "",
-    password: "",
     name: ""
   });
+  const [BoardDetailData, setBoardDetailData] = useState({
+    title: "",
+    content: "",
+    name: ""
+  });
+  const params = useParams();
+  useEffect(()=>{
+    handleBoardDetail()
+  },[]);
 
-  const handleCreatePost = async () => {
+  const handleBoardDetail = async () => {
     try {
-      const response = await axios.get("/api/posts", postData);
+      const response = await axios.get(`/api/posts/${params.id}`, postData);
       console.log("API 응답:", response.data);
+      // 성공적인 응답 후의 동작을 추가하세요.
+      setBoardDetailData(response.data);
+    } catch (error) {
+      console.error("API 요청 중 오류:", error);
+    }
+  };
+  const handleBoardDetailUpdate = async () => {
+    try {
+      const response = await axios.patch(`/api/posts/${params.id}`, {
+        data: password,  // 비밀번호를 요청 본문에 포함
+      });
+
+      alert("삭제되었습니다!");
+      navigate("/board");
+      console.log("API 응답:", response);
 
       // 성공적인 응답 후의 동작을 추가하세요.
 
     } catch (error) {
       console.error("API 요청 중 오류:", error);
+      alert("에러 발생");
     }
   };
+  const handleBoardDetailDelete = async () => {
+    try {
+      const response = await axios.delete(`/api/posts/${params.id}`, {
+        data: password,  // 비밀번호를 요청 본문에 포함
+      });
+
+      alert("삭제되었습니다!");
+      navigate("/board");
+      console.log("API 응답:", response);
+
+      // 성공적인 응답 후의 동작을 추가하세요.
+
+    } catch (error) {
+      console.error("API 요청 중 오류:", error);
+      alert("에러 발생");
+    }
+  };
+
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -58,7 +109,7 @@ function BoardDetail() {
                 type="text"
                 id="title"
                 name="title"
-                value={postData.title}
+                value={BoardDetailData.title}
                 onChange={handleInputChange}
               />
             </InputInnerGroup>
@@ -68,7 +119,7 @@ function BoardDetail() {
                 type="text"
                 id="name"
                 name="name"
-                value={postData.name}
+                value={BoardDetailData.name}
                 onChange={handleInputChange}
               />
             </InputInnerGroup>
@@ -78,7 +129,7 @@ function BoardDetail() {
           <TextArea
             id="content"
             name="content"
-            value={postData.content}
+            value={BoardDetailData.content}
             onChange={handleInputChange}
           ></TextArea>
           <PasswordContainer>
@@ -88,15 +139,19 @@ function BoardDetail() {
                     type="text"
                     id="password"
                     name="password"
-                    value={postData.password}
+                value={BoardDetailData.password}
                     onChange={handleInputChange}
                   />
                 </InputInnerGroup>
           </PasswordContainer>
-
-          <SubmitButton type="button" onClick={handleCreatePost}>
-            작성
-          </SubmitButton>
+          <ButtonContainer>
+            <SubmitButton type="button" onClick={handleBoardDetailUpdate}>
+              수정
+            </SubmitButton>
+            <SubmitButton type="button" onClick={handleBoardDetailDelete}>
+              삭제
+            </SubmitButton>
+          </ButtonContainer>
         </Form>
       </PostContainer>
     </>

@@ -185,15 +185,6 @@ const ApplicationFillPage03 = () => {
           이해 관계인(친족을 제외한 이웃 등 그 밖의 관계인) 등
         </div>
 
-        <button className="previousButton">
-          <div className="previousButtonText">이전화면</div>
-        </button>
-
-        <button className="nextButton">
-          <div className="nextButtonText">다음화면</div>
-        </button>
-
-        <button style={{ padding: '8px 16px' }} onClick={handleClick}></button>
       </div>
     </div>
   );

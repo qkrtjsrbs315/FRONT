@@ -114,16 +114,6 @@ const ApplicationFillPage02 = () => {
           onClick={() => handleRadioChange03('disagree')}
         >
         </button>
-
-        <button className="previousButton">
-          <div className="previousButtonText">이전화면</div>
-        </button>
-
-        <button className="nextButton">
-          <div className="nextButtonText">다음화면</div>
-        </button>
-
-        <button style={{ padding: '8px 16px' }} onClick={handleClick}></button>
       </div>
     </div>
   );
