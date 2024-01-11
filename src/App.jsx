@@ -1,7 +1,9 @@
 import React from 'react';
 
 import { Routes, Route } from 'react-router-dom';
-import Header from './components/header/header';
+import Footer from './components/footer/Newfooter';
+import Header from './components/header/Newheader';
+import Home from './components/home/home';
 import ApplicationEntryPage from './components/ApplicationEntryPage/ApplicationEntryPage';
 import ApplicationFillPage01 from './components/ApplicationFillPage01/ApplicationFillPage01';
 import ApplicationFillPage02 from './components/ApplicationFillPage02/ApplicationFillPage02';
@@ -28,6 +30,7 @@ function App() {
 const AppRoutes = () =>(
   <div className="app-container">
         <Header />
+        <Footer />
   <div className="app-content">
     <Routes>
       <Route path='/' element={<App/>} />
