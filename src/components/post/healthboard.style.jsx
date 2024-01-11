@@ -1,5 +1,5 @@
 import styled from "styled-components";
-
+import { Link } from "react-router-dom";
 export const HealthBoardContainer = styled.div`
   background-color: #f5f5f5;
   padding: 20px;
@@ -43,6 +43,22 @@ export const GridItem = styled.div`
   background-color: #ddd; /* 그리드 아이템 배경색 */
 `;
 
+export const StyledLink = styled(Link)`
+  text-decoration: none;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ddd; /* 그리드 아이템 배경색 */
+  color: #333; /* Link text color, customize as needed */
+  font-weight: bold;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: #aaa; /* Change the background color on hover */
+  }
+`;
 export const ShortLine = styled.div`
     width: 300px;
     height: 2px;
