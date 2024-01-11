@@ -14,6 +14,7 @@ import VolunteerHistoryWritePage from './components/volunteer/volunteerhistorywr
 import VolunteerEntry from './components/volunteer/volunteerentry';
 import VolunteerHistoryBoard from './components/volunteer/volunteerhistoryboard';
 import Newfooter from './components/footer/Newfooter';
+import HealthBoardDetail from './components/post/healthboarddetail';
 
 function App() {
   return (
@@ -33,6 +34,7 @@ const AppRoutes = () =>(
       <Route path='/board/:id' element={<BoardDetail/>} />
       <Route path='/post' element={<CreatePost/>} />
       <Route path='/healthboard' element={<HealthBoard/>} />
+      <Route path='/healthboard/:id' element={<HealthBoardDetail props/>} />
       <Route path='/care' element={<CarePage />} />
       <Route path='/volunteer' element={<  VolunteerEntry />} />
       <Route path='/volunteerwrite' element={<VolunteerHistoryWritePage />} />

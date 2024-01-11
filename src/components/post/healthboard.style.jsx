@@ -59,6 +59,22 @@ export const StyledLink = styled(Link)`
     background-color: #aaa; /* Change the background color on hover */
   }
 `;
+export const StyledAnchor = styled.a`
+  text-decoration: none;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ddd; /* 그리드 아이템 배경색 */
+  color: #333; /* Anchor text color, customize as needed */
+  font-weight: bold;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: #aaa; /* Change the background color on hover */
+  }
+`;
 export const ShortLine = styled.div`
     width: 300px;
     height: 2px;
