@@ -8,7 +8,8 @@ export const BoardContainer = styled.div`
   border-radius: 10px;
   margin: 20px;
   width: 1000px;
-  height: 720px;
+  max-height: 720px;
+  overflow-y: auto; /* 스크롤이 필요한 경우 스크롤 표시 */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -35,6 +36,10 @@ export const BoardItem = styled.li`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+
+  &:hover {
+    cursor : pointer;
+  }
 `;
 
 export const BoardTitle = styled.h3`
@@ -78,7 +83,6 @@ export const StyledLink = styled(Link)`
   text-align: right;
   margin-top: 10px;
   margin-bottom: 10px;
-  
 
   button {
     background-color: #3498db;

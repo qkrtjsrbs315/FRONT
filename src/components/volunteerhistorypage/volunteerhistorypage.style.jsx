@@ -1,4 +1,4 @@
-// createpost.style.js
+// volunteerhistorypage.style.js
 import styled from 'styled-components';
 
 export const PostContainer = styled.div`
@@ -7,7 +7,7 @@ export const PostContainer = styled.div`
   border-radius: 10px;
   margin: 20px;
   width: 1000px;
-  height: 700px;
+  height: 900px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -75,6 +75,7 @@ export const SubmitButton = styled.button`
   border-radius: 5px;
   cursor: pointer;
   font-size: 1.2em;
+  margin-left : 15px;
 
   &:hover {
     background-color: #2185d0;
@@ -86,4 +87,9 @@ export const PasswordContainer = styled.div`
   width : 300px;
   margin-bottom : 20px;
  
+`
+export const ButtonGroup = styled.div`
+    display : flex;
+    
+
 `
