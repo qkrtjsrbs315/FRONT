@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import useScreenRatio from './useScreenRatio.js'; //화면 비율 자동 계산기
 import ChangeSize from './changeSize.js';
 import './Newfooter.css';
+import { ReactComponent as Foothersvg } from './푸터.svg';
 
 const Newfooter = () => {
     const { viewportWidth, viewportHeight } = useScreenRatio();
@@ -16,13 +17,15 @@ const Newfooter = () => {
     // changeSize.js 파일 안으로 이동시킴
 
     return (
-        <div className="container">
-            
-
-            <button style={{ padding: '8px 16px' }} onClick={handleClick}></button>
+        <div className="containerFT">
+            <div className="dividingBarFT"></div>
+            <div className="rectangleFT">
+                <Foothersvg div className="foothersvg"/>
+            </div>
         </div>
     );
 };
 
 export default Newfooter;
+
 

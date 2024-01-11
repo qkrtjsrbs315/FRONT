@@ -7,12 +7,13 @@ import './App.css';
 import CreatePost from './components/post/createpost';
 import Board from './components/post/board';
 import BoardDetail from './components/post/boarddetail';
-
+import Main from './components/main/main'
 import HealthBoard from './components/post/healthboard';
 import CarePage from './components/care/care';
 import VolunteerHistoryWritePage from './components/volunteer/volunteerhistorywrite';
 import VolunteerEntry from './components/volunteer/volunteerentry';
 import VolunteerHistoryBoard from './components/volunteer/volunteerhistoryboard';
+import Newfooter from './components/footer/Newfooter';
 
 function App() {
   return (
@@ -27,18 +28,19 @@ const AppRoutes = () =>(
         <Header />
   <div className="app-content">
     <Routes>
-      <Route path='/' element={<App/>} />
+        <Route path='/' element={<Main />} />
       <Route path='/board' element={<Board/>} />
       <Route path='/board/:id' element={<BoardDetail/>} />
       <Route path='/post' element={<CreatePost/>} />
       <Route path='/healthboard' element={<HealthBoard/>} />
       <Route path='/care' element={<CarePage />} />
-        <Route path='/volunteer' element={<  VolunteerEntry />} />
+      <Route path='/volunteer' element={<  VolunteerEntry />} />
       <Route path='/volunteerwrite' element={<VolunteerHistoryWritePage />} />
-        <Route path='/volunteerboard' element={<VolunteerHistoryBoard />} />
+      <Route path='/volunteerboard' element={<VolunteerHistoryBoard />} />
 
     </Routes>
   </div>
+    <Newfooter></Newfooter>
   </div>
 )
 

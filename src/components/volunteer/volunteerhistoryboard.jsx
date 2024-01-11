@@ -52,7 +52,7 @@ function VolunteerHistoryBoard() {
                             <BoardFooter>
                                 <BoardAuthor>{board.writer}</BoardAuthor>
                                 {/* date 프로퍼티가 목데이터에 없으므로 더미 데이터로 대체 */}
-                                <BoardDate>Dummy Date</BoardDate>
+                                <BoardDate>{board.updatedTime}</BoardDate>
                             </BoardFooter>
                         </BoardItem>
                     ))}

@@ -1,6 +1,51 @@
-.container {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-  }
-  
+.containerFT {
+  position: relative;
+  width: 100%;
+  bottom: 0;
+  margin-top: 50px ;
+}
+
+.dividingBarFT {
+  position: relative;
+  left: 50%;
+  transform: translate(-50%);
+  bottom: 0;
+  /*위치 자동 조정*/
+
+  width: calc(1440px * var(--screen-ratio));
+  /*크기 자동 조정*/
+  height: calc(3px * var(--screen-ratio));
+  /*크기 자동 조정*/
+
+  background-color: black;
+}
+
+.rectangleFT {
+  position: relative;
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%);
+
+  width: calc(1440px * var(--screen-ratio));
+  /*크기 자동 조정*/
+  height: calc(100px * var(--screen-ratio));
+  /*크기 자동 조정*/
+
+  background-color: white;
+  text-align: center;
+}
+
+.foothersvg {
+  position: relative;
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%);
+
+  width: calc(1440px * var(--screen-ratio));
+  /*크기 자동 조정*/
+  height: calc(100px * var(--screen-ratio));
+  /*크기 자동 조정*/
+
+  background-color: white;
+  text-align: center;
+}

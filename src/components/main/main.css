@@ -1,0 +1,150 @@
+.main-container {
+    display: flex;
+    flex-direction: column; /* 세로 방향으로 배치 */
+    align-items: center; /* 세로 축을 중앙에 정렬 */
+    max-width: calc(1200px * var(--screen-ratio)); /* 최대 너비 설정 */
+  }
+
+  
+  .main-image {
+    width: 80vw;
+    height: calc(350px * var(--screen-ratio));
+    margin-top: 10px;
+    background-color: #000; /* 검은색 */
+    max-width: calc(1200px * var(--screen-ratio)); /* 최대 너비 설정 */
+  }
+  
+  .main-div {
+    width: 80vw;
+    height: 2px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: #000; /* 검은색 */
+    max-width: calc(1200px * var(--screen-ratio)); /* 최대 너비 설정 */
+  }
+
+  .outer-container {
+    display: flex;
+    align-items: center; /* 세로 축 정중앙에 위치 */
+    width: 80vw; /* 원하는 범위 설정 */
+    max-width: calc(1200px * var(--screen-ratio)); /* 최대 너비 설정 */
+    margin-bottom: 10px;
+  }
+  
+  .rectangle-container {
+    display: flex;
+    justify-content: space-between; /* 요소를 맨 왼쪽, 중앙, 맨 오른쪽에 배치 */
+    width: 100%; /* 부모 컨테이너에 딱 맞게 채우도록 설정 */
+  }
+  
+  .rectangle1 {
+    width: calc(360px * var(--screen-ratio));
+    height: calc(300px * var(--screen-ratio));
+    background-color: #DADADA;
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* 세로 축 정중앙에 위치 */
+  }
+  
+  .rectangle1text {
+    font-size: calc(30px * var(--screen-ratio));
+    font-weight: 600;
+    margin-top: 30px;
+    text-align: center; /* 텍스트 가운데 정렬 */
+  }
+
+  .rectangle1text2 {
+    font-size: calc(20px * var(--screen-ratio));
+    font-weight: 600;
+    margin-top: 10px;
+    text-align: center; /* 텍스트 가운데 정렬 */
+  }
+  
+  .rectangle1text3 {
+    width: calc(320px * var(--screen-ratio));
+    height: calc(80px * var(--screen-ratio));
+    border: 0;
+    background-color: #3498db;
+  }
+
+  .rectangle1text4 {
+    font-size: calc(32px * var(--screen-ratio));
+    font-weight: 500;
+    text-align: center; /* 텍스트 가운데 정렬 */
+  }
+
+  .rectangle2 {
+    width: calc(360px * var(--screen-ratio));
+    height: calc(300px * var(--screen-ratio));
+    background-color: #DADADA;
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* 세로 축 정중앙에 위치 */
+  }
+  
+  .rectangle2text {
+    font-size: calc(30px * var(--screen-ratio));
+    font-weight: 600;
+    margin-top: 30px;
+    text-align: center; /* 텍스트 가운데 정렬 */
+  }
+
+  .rectangle2text2 {
+    font-size: calc(20px * var(--screen-ratio));
+    font-weight: 600;
+    margin-top: 10px;
+    text-align: center; /* 텍스트 가운데 정렬 */
+  }
+  
+  .rectangle2text3 {
+    width: calc(320px * var(--screen-ratio));
+    height: calc(80px * var(--screen-ratio));
+    border: 0;
+    background-color: #3498db;
+  }
+
+  .rectangle2text4 {
+    font-size: calc(32px * var(--screen-ratio));
+    font-weight: 500;
+    text-align: center; /* 텍스트 가운데 정렬 */
+  }
+
+  .rectangle3 {
+    width: calc(360px * var(--screen-ratio));
+    height: calc(300px * var(--screen-ratio));
+    background-color: #DADADA;
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* 세로 축 정중앙에 위치 */
+  }
+  
+  .rectangle3text {
+    font-size: calc(30px * var(--screen-ratio));
+    font-weight: 600;
+    margin-top: 30px;
+    text-align: center; /* 텍스트 가운데 정렬 */
+  }
+
+  .rectangle3text2 {
+    font-size: calc(20px * var(--screen-ratio));
+    font-weight: 600;
+    margin-top: 10px;
+    text-align: center; /* 텍스트 가운데 정렬 */
+  }
+  
+  .rectangle3text3 {
+    width: calc(320px * var(--screen-ratio));
+    height: calc(80px * var(--screen-ratio));
+    border: 0;
+    background-color: #B5B5B5;
+  }
+
+  .rectangle3text4 {
+    font-size: calc(32px * var(--screen-ratio));
+    font-weight: 500;
+    text-align: center; /* 텍스트 가운데 정렬 */
+  }
+  
