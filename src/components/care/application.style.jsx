@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const ApplicationContainer = styled.div`
     width: calc(1100px * var(--screen-ratio)); 
     /*크기 자동 조정*/
-    height: calc(500px * var(--screen-ratio)); 
+    height: calc(600px * var(--screen-ratio)); 
     /*크기 자동 조정*/
     background-color : #DADADA;
     margin : 30px;
@@ -13,6 +13,12 @@ export const ApplicationContainer = styled.div`
     justify-content : center;
     align-items : center;
 
+
+`
+export const HeaderStyledP = styled.p`
+  font-size: 40px;
+  font-weight: bold;
+  margin-bottom: 5px;
 
 `
 export const StyledP = styled.p`
@@ -40,14 +46,17 @@ export const InputForm = styled.form`
 export const InputGroup = styled.div`
   display :flex;
   flex-direction : column;
-
+  align-items : flex-start;
+  justify-content : space-around;
+  width : 50%;
+  height : 100%;
 
 `;
 
 export const InputInnerGroup = styled.div`
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 95%;
 `;
 
 
@@ -63,3 +72,31 @@ export const InputField = styled.input`
   border: 1px solid #ccc;
   border-radius: 5px;
 `;
+export const ButtonField = styled.button`
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #4CAF50; /* Green background color */
+  color: white; /* White text color */
+  cursor: pointer;
+
+  &:hover {
+    background-color: #45a049; /* Darker green on hover */
+  }
+
+  &:disabled {
+    background-color: #ddd; /* Light gray for disabled state */
+    color: #555; /* Dark gray text for disabled state */
+    cursor: not-allowed;
+  }
+`;
+
+export const WrapGroup = styled.div`
+    display : flex;
+    flex-direction : column;
+
+
+
+`

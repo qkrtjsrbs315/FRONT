@@ -1,0 +1,256 @@
+.container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+.rectangle {
+  position: relative;
+  left: 50%;
+  top: calc(250px * var(--screen-ratio));
+  transform: translate(-50%);
+
+  width: calc(1000px * var(--screen-ratio));
+  /*크기 자동 조정*/
+  height: calc(500px * var(--screen-ratio));
+  /*크기 자동 조정*/
+
+  background-color: #dadada;
+  text-align: center;
+}
+
+.pageExplanation {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+
+  top: calc(30px * var(--screen-ratio) + (-2px * var(--changeSize) * var(--screen-ratio)));
+  /*위치 자동 조정*/
+
+  font-family: 'Inner', sans-serif;
+  font-size: calc((40px * var(--screen-ratio)) + (4px * var(--changeSize) * var(--screen-ratio)));
+  /*크기 자동 조정*/
+  color: black;
+  font-weight: normal;
+  white-space: nowrap;
+}
+
+.dividingBar {
+  position: absolute;
+  left: calc(25px * var(--screen-ratio));
+  /*위치 자동 조정*/
+  top: calc(100px * var(--screen-ratio));
+  /*위치 자동 조정*/
+
+  width: calc(950px * var(--screen-ratio));
+  /*크기 자동 조정*/
+  height: calc(2px * var(--screen-ratio));
+  /*크기 자동 조정*/
+
+  background-color: black;
+}
+
+.nameExplanation {
+  position: absolute;
+
+  left: calc(56px * var(--screen-ratio));
+  /*위치 자동 조정*/
+  top: calc((115px * var(--screen-ratio)) + (-2px * var(--changeSize) * var(--screen-ratio)));
+  /*위치 자동 조정*/
+
+  border: none;
+  font-size: calc((20px * var(--screen-ratio)) + (4px * var(--changeSize) * var(--screen-ratio)));
+  outline: none;
+}
+
+.nameInput {
+  position: absolute;
+
+  left: calc(56px * var(--screen-ratio));
+  /*위치 자동 조정*/
+  top: calc(145px * var(--screen-ratio));
+  /*위치 자동 조정*/
+
+  width: calc(400px * var(--screen-ratio));
+  /*크기 자동 조정*/
+  height: calc(40px * var(--screen-ratio));
+  /*크기 자동 조정*/
+
+  padding: 0;
+  border: none;
+  font-size: calc(24px * var(--screen-ratio));
+  outline: none;
+}
+
+.ResidentNumExplanation {
+  position: absolute;
+
+  left: calc(556px * var(--screen-ratio));
+  /*위치 자동 조정*/
+  top: calc((115px * var(--screen-ratio)) + (-2px * var(--changeSize) * var(--screen-ratio)));
+  /*위치 자동 조정*/
+
+  border: none;
+  font-size: calc((20px * var(--screen-ratio)) + (4px * var(--changeSize) * var(--screen-ratio)));
+  outline: none;
+}
+
+.ResidentNumInput {
+  position: absolute;
+
+  left: calc(556px * var(--screen-ratio));
+  /*위치 자동 조정*/
+  top: calc(145px * var(--screen-ratio));
+  /*위치 자동 조정*/
+
+  width: calc(400px * var(--screen-ratio));
+  /*크기 자동 조정*/
+  height: calc(40px * var(--screen-ratio));
+  /*크기 자동 조정*/
+
+  padding: 0;
+  border: none;
+  font-size: calc(24px * var(--screen-ratio));
+  outline: none;
+}
+
+.telNumExplanation {
+  position: absolute;
+
+  left: calc(56px * var(--screen-ratio));
+  /*위치 자동 조정*/
+  top: calc((195px * var(--screen-ratio)) + (-2px * var(--changeSize) * var(--screen-ratio)));
+  /*위치 자동 조정*/
+
+  border: none;
+  font-size: calc((20px * var(--screen-ratio)) + (4px * var(--changeSize) * var(--screen-ratio)));
+  outline: none;
+}
+
+.homeNumInput {
+  position: absolute;
+
+  left: calc(56px * var(--screen-ratio));
+  /*위치 자동 조정*/
+  top: calc(225px * var(--screen-ratio));
+  /*위치 자동 조정*/
+
+  width: calc(400px * var(--screen-ratio));
+  /*크기 자동 조정*/
+  height: calc(40px * var(--screen-ratio));
+  /*크기 자동 조정*/
+
+  padding: 0;
+  border: none;
+  font-size: calc(24px * var(--screen-ratio));
+  outline: none;
+}
+
+.PhoneNumInput {
+  position: absolute;
+
+  left: calc(56px * var(--screen-ratio));
+  /*위치 자동 조정*/
+  top: calc(275px * var(--screen-ratio));
+  /*위치 자동 조정*/
+
+  width: calc(400px * var(--screen-ratio));
+  /*크기 자동 조정*/
+  height: calc(40px * var(--screen-ratio));
+  /*크기 자동 조정*/
+
+  padding: 0;
+  border: none;
+  font-size: calc(24px * var(--screen-ratio));
+  outline: none;
+}
+
+.addressExplanation {
+  position: absolute;
+
+  left: calc(556px * var(--screen-ratio));
+  /*위치 자동 조정*/
+  top: calc((195px * var(--screen-ratio)) + (-2px * var(--changeSize) * var(--screen-ratio)));
+  /*위치 자동 조정*/
+
+  border: none;
+  font-size: calc((20px * var(--screen-ratio)) + (4px * var(--changeSize) * var(--screen-ratio)));
+  outline: none;
+}
+
+.registrationAddressInput {
+  position: absolute;
+
+  left: calc(556px * var(--screen-ratio));
+  /*위치 자동 조정*/
+  top: calc(225px * var(--screen-ratio));
+  /*위치 자동 조정*/
+
+  width: calc(400px * var(--screen-ratio));
+  /*크기 자동 조정*/
+  height: calc(40px * var(--screen-ratio));
+  /*크기 자동 조정*/
+
+  padding: 0;
+  border: none;
+  font-size: calc(24px * var(--screen-ratio));
+  outline: none;
+}
+
+.residenceAddressInput {
+  position: absolute;
+
+  left: calc(556px * var(--screen-ratio));
+  /*위치 자동 조정*/
+  top: calc(275px * var(--screen-ratio));
+  /*위치 자동 조정*/
+
+  width: calc(400px * var(--screen-ratio));
+  /*크기 자동 조정*/
+  height: calc(40px * var(--screen-ratio));
+  /*크기 자동 조정*/
+
+  padding: 0;
+  border: none;
+  font-size: calc(24px * var(--screen-ratio));
+  outline: none;
+}
+
+.nextButton {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+
+  top: calc(375px * var(--screen-ratio));
+  /*위치 자동 조정*/
+
+  width: calc(200px * var(--screen-ratio));
+  /*크기 자동 조정*/
+  height: calc(60px * var(--screen-ratio));
+  /*크기 자동 조정*/
+
+  border: 0;
+  background-color: #b5b5b5;
+  /*크기 자동 조정*/
+  cursor: pointer;
+}
+
+.nextButton:hover {
+  /* 호버 효과 */
+  background-color: #878787;
+}
+
+.nextButtonText {
+  position: absolute;
+  left: 50%;
+  top: 45%;
+  transform: translate(-50%, -50%);
+
+  font-family: 'Inner', sans-serif;
+  font-size: calc((40px * var(--screen-ratio)) + (4px * var(--changeSize) * var(--screen-ratio)));
+  /*크기 자동 조정*/
+  color: black;
+  font-weight: normal;
+
+  white-space: nowrap;
+}

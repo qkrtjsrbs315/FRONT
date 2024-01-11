@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import useScreenRatio from './useScreenRatio.js'; //화면 비율 자동 계산기
 import ChangeSize from './changeSize';
 import './main.css';
+import { StyledLinkButton } from './main.style';
 
 const Main = () => {
     const { viewportWidth, viewportHeight } = useScreenRatio();
@@ -27,9 +28,7 @@ const Main = () => {
                             작성하고 싶으신가요?</div>
                         <div className="rectangle1text2">
                             눌러주세요! </div>
-                        <button className="rectangle1text3">
-                            <div className="rectangle1text4">노인돌봄신청서 작성</div>
-                        </button>
+                        <StyledLinkButton to="/care">노인 돌봄 신청서 작성</StyledLinkButton>
                     </div>
                     <div className="rectangle2">
                         <div className="rectangle2text">
@@ -37,9 +36,7 @@ const Main = () => {
                             신청하고 싶으신가요?</div>
                         <div className="rectangle2text2">
                             눌러주세요! </div>
-                        <button className="rectangle2text3">
-                            <div className="rectangle2text4">노인 봉사 활동</div>
-                        </button>
+                        <StyledLinkButton to="/volunteerwrite">노인 봉사 활동</StyledLinkButton>
                     </div>
                     <div className="rectangle2">
                         <div className="rectangle2text">
@@ -47,9 +44,7 @@ const Main = () => {
                             올려보고 싶으신가요?</div>
                         <div className="rectangle2text2">
                             눌러주세요! </div>
-                        <button className="rectangle2text3">
-                            <div className="rectangle2text4">이야기 봉사 활동</div>
-                        </button>
+                            <StyledLinkButton to="/volunteerwrite">이야기 게시판으로 이동</StyledLinkButton>
                     </div>
                 </div>
             </div>

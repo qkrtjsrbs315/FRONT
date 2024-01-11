@@ -8,6 +8,7 @@ import {
   StyledP,
   LongLine,
   InputField,
+  HeaderStyledP
 } from '../application.style';
 import { InputForm, InputGroup, InputInnerGroup, InputLabel } from '../application.style';
 
@@ -78,7 +79,7 @@ const ApplicationFillPage01 = ({getInfo}) => {
 
   return (
     <ApplicationContainer>
-      <StyledP>노인맞춤돌봄서비스 신청서 작성 화면입니다.</StyledP>
+      <HeaderStyledP>노인맞춤돌봄서비스 신청서 작성 화면입니다.</HeaderStyledP>
       <LongLine />
       <InputForm>
         <InputGroup>

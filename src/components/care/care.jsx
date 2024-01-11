@@ -5,6 +5,7 @@ import ApplicationFillPage01 from './ApplicationFillPage01/ApplicationFillPage01
 import ApplicationFillPage02 from './ApplicationFillPage02/ApplicationFillPage02';
 import ApplicationFillPage03 from './ApplicationFillPage03/ApplicationFillPage03';
 import ApplicationFillPage04 from './ApplicationFillPage04/ApplicationFillPage04';
+import VerifyPage from './verify/verify';
 import { PageButton, ButtonContainer, CareContainer, HomeButton } from './care.style';
 import {useSelector} from 'react-redux';
 import axios from 'axios';
@@ -13,10 +14,18 @@ import axios from 'axios';
 function CarePage() {
     const [currentPage, setCurrentPage] = useState(0);
     const careInfo = useSelector((state) => state.care.careInfo);
+    const [isChecked,setIsChecked] = useState(false);
+    
+    const getIsChecked = (check) =>{
+        setIsChecked(check);
+        console.log("care : find : ",isChecked)
+    }
 
     const navigate = useNavigate();
+    
     const pages = [
         <ApplicationEntryPage />,
+        <VerifyPage getIsChecked={getIsChecked }/>,
         <ApplicationFillPage01 />, //enum 1
         <ApplicationFillPage02/>, //enum2
         <ApplicationFillPage03 />, //enum3
@@ -58,25 +67,26 @@ function CarePage() {
                         다음 페이지
                     </PageButton>
                 )}
-                {currentPage >= 1 && currentPage < 3 && (
+                {currentPage >= 1 && currentPage < 4 && (
                     <>
-                        <PageButton onClick={handlePrevPage} disabled={currentPage === 1}>
+                        <PageButton onClick={handlePrevPage} disabled={currentPage === 0}>
                             이전 페이지
                         </PageButton>
-                        <PageButton onClick={handleNextPage} disabled={currentPage === pages.length - 1}>
+                        <PageButton onClick={handleNextPage} disabled={currentPage === pages.length - 1 ||  !isChecked}>
                             다음 페이지
                         </PageButton>
                     </>
                 )}
-                {currentPage === 3 && (
-                    <PageButton onClick={handleSubmit}>
-                        제출하기
-                    </PageButton>
-                )}
                 {currentPage === 4 && (
-                    <PageButton onClick={handleGoHome}>
-                        홈으로 가기
-                    </PageButton>
+                    <>
+                        <PageButton onClick={handlePrevPage} disabled={currentPage === 1}>
+                            이전 페이지
+                        </PageButton>
+
+                        <PageButton onClick={handleSubmit}>
+                            제출하기
+                        </PageButton>
+                    </>
                 )}
             </ButtonContainer>
         </CareContainer>

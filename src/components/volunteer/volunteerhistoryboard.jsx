@@ -7,6 +7,9 @@ import axios from "axios";
 function VolunteerHistoryBoard() {
     const navigate = useNavigate();
     const [boardData, setBoardData] = useState([]);
+    const [currentPage, setCurrentPage] = useState(1);
+    const itemsPerPage = 5;
+
     useEffect(() => {
         handleGetPost()
     }, []);
@@ -32,20 +35,36 @@ function VolunteerHistoryBoard() {
         navigate(`/board/${boardId}`);
     };
 
-    const handleCreatePostClick = () => {
-        // 게시글 작성 페이지로 이동하는 로직 추가
-        // 예: navigate('/createpost');
+    const handleNextPageClick = () => {
+        if (currentPage * itemsPerPage < boardData.length) {
+            setCurrentPage(currentPage + 1);
+        } else {
+            alert("페이지 끝입니다.");
+        }
     };
+
+    const handlePrevPageClick = () => {
+        if (currentPage > 1) {
+            setCurrentPage(currentPage - 1);
+        }
+    };
+
+
+    // Calculate the index range for the current page
+    const startIndex = (currentPage - 1) * itemsPerPage;
+    const endIndex = startIndex + itemsPerPage;
+    const displayedBoardData = boardData.slice(startIndex, endIndex);
+
 
     return (
         <>
             <BoardContainer>
                 <StyledP>봉사이력 게시판</StyledP>
-                <StyledLink to="/volunteerwrite">
+                <StyledLink to="/post">
                     <button>봉사이력 작성</button>
                 </StyledLink>
                 <BoardList>
-                    {boardData.map((board) => (
+                    {displayedBoardData.map((board) => (
                         <BoardItem key={board.id} onClick={() => handleBoardItemClick(board.id)}>
                             <BoardTitle>봉사이력 : {board.volunteer}</BoardTitle>
                             <BoardDescription>선호하는 봉사 : {board.preferVolunteer}</BoardDescription>
@@ -58,9 +77,13 @@ function VolunteerHistoryBoard() {
                     ))}
                 </BoardList>
                 <PaginationContainer>
-                    <PaginationButton>이전 페이지</PaginationButton>
-                    <CurrentPage>1</CurrentPage>
-                    <PaginationButton>다음 페이지</PaginationButton>
+                    <PaginationButton onClick={handlePrevPageClick} disabled={currentPage === 1}>
+                        이전 페이지
+                    </PaginationButton>
+                    <CurrentPage>{currentPage}</CurrentPage>
+                    <PaginationButton onClick={handleNextPageClick}>
+                        다음 페이지
+                    </PaginationButton>
                 </PaginationContainer>
             </BoardContainer>
         </>

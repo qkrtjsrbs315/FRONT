@@ -10,6 +10,11 @@ const ApplicationFillPage02 = () => {
   const dispatch = useDispatch();
   const careInfo = useSelector((state) => state.care.careInfo);
   const [localInfo,setLocalInfo] = useState(careInfo);
+
+
+  const [selectedOption01, setSelectedOption01] = useState(null);
+  const [selectedOption02, setSelectedOption02] = useState(null);
+  const [selectedOption03, setSelectedOption03] = useState(null);
   //  const token = useSelector((state) => state.user.userInfo.token);
   console.log(careInfo);
 
@@ -31,15 +36,18 @@ const ApplicationFillPage02 = () => {
   const handleRadioChange01 = (collectPersonalInfo) => {
     let radiobool1 = (collectPersonalInfo === null || collectPersonalInfo === "disagree") ? false : true
     console.log(radiobool1)
+    setSelectedOption01(collectPersonalInfo === selectedOption01 ? null : collectPersonalInfo);
     setLocalInfo((prevState) => ({ ...prevState, collectPersonalInfo: radiobool1 }));
     };
 
   const handleRadioChange02 = (offerPersonalInfo) => {
     let radiobool2 = (offerPersonalInfo === null || offerPersonalInfo === "disagree") ?false : true;
+    setSelectedOption02(offerPersonalInfo === selectedOption02 ? null : offerPersonalInfo);
     setLocalInfo((prevState) => ({ ...prevState, offerPersonalInfo: radiobool2 }));
   };
   const handleRadioChange03 = (identificationInfo) => {
     let radiobool3 = ((identificationInfo === null || identificationInfo === "disagree") ? false : true)
+    setSelectedOption03(identificationInfo === selectedOption03 ? null : identificationInfo);
     setLocalInfo((prevState) => ({ ...prevState, identificationInfo: radiobool3}));
   };
 
@@ -70,14 +78,14 @@ const ApplicationFillPage02 = () => {
 
         <div className="agreeButtonText01">동의</div>
         <button
-          className={`agreeButton01 ${localInfo.collectPersonalInfo === 'agree' ? 'checked' : ''}`}
+          className={`agreeButton01 ${selectedOption01 === 'agree' ? 'checked' : ''}`}
           onClick={() => handleRadioChange01('agree')}
         >
         </button>
 
         <div className="disagreeButtonText01">비동의</div>
         <button
-          className={`disagreeButton01 ${localInfo.collectPersonalInfo === 'disagree' ? 'checked' : ''}`}
+          className={`disagreeButton01 ${selectedOption01 === 'disagree' ? 'checked' : ''}`}
           onClick={() => handleRadioChange01('disagree')}
         >
         </button>
@@ -96,14 +104,14 @@ const ApplicationFillPage02 = () => {
 
         <div className="agreeButtonText02">동의</div>
         <button
-          className={`agreeButton02 ${localInfo.offerPersonalInfo === 'agree' ? 'checked' : ''}`}
+          className={`agreeButton02 ${selectedOption02 === 'agree' ? 'checked' : ''}`}
           onClick={() => handleRadioChange02('agree')}
         >
         </button>
 
         <div className="disagreeButtonText02">비동의</div>
         <button
-          className={`disagreeButton02 ${localInfo.offerPersonalInfo === 'disagree' ? 'checked' : ''}`}
+          className={`disagreeButton02 ${selectedOption02 === 'disagree' ? 'checked' : ''}`}
           onClick={() => handleRadioChange02('disagree')}
         >
         </button>
@@ -120,14 +128,15 @@ const ApplicationFillPage02 = () => {
 
         <div className="agreeButtonText03">동의</div>
         <button
-          className={`agreeButton03 ${localInfo.identificationInfo === 'agree' ? 'checked' : ''}`}
+
+          className={`agreeButton03 ${selectedOption03 === 'agree' ? 'checked' : ''}`}
           onClick={() => handleRadioChange03('agree')}
         >
         </button>
 
         <div className="disagreeButtonText03">비동의</div>
         <button
-          className={`disagreeButton03 ${localInfo.identificationInfo === 'disagree' ? 'checked' : ''}`}
+          className={`disagreeButton03 ${selectedOption03 === 'disagree' ? 'checked' : ''}`}
           onClick={() => handleRadioChange03('disagree')}
         >
         </button>
